@@ -33,13 +33,17 @@
 #### 1.2.2 常见构造方法
 #### 1. 基于距离的函数
 设 $d_{ij}$ 为两单位间的距离，定义：
+
 $$
 h(d_{ij}) = d_{ij}^{-\alpha} \quad \text{或} \quad h(d_{ij}) = \exp(-\alpha d_{ij}), \quad \alpha > 0
 $$
+
 则权重为：
+
 $$
 w_{ij} = \frac{h(d_{ij})}{\sum_{k=1}^n h(d_{ik})}
 $$
+
 此时 $W$ 经过行标准化（row-normalization）。
 
 #### 2. 邻接矩阵（0-1矩阵）
@@ -51,9 +55,11 @@ $$
 
 #### 3. 基于群组结构
 假设样本分为 $R$ 组，每组 $m$ 个单位，组内权重均匀分配：
+
 $$
 B_m = \frac{1}{m-1}(l_m l_m' - I_m), \quad W_n = I_R \otimes B_m
 $$
+
 其中 $l_m$ 是全1向量，$\otimes$ 为Kronecker积。
 
 #### 1.3.3 行标准化的意义与问题
