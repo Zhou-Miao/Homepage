@@ -62,16 +62,63 @@ $$
 
 其中 $l_m$ 是全1向量，$\otimes$ 为Kronecker积。
 
-#### 1.3.3 行标准化的意义与问题
+#### 1.2.3 行标准化的意义与问题
 - **意义**：使得 $\sum_j w_{ij} = 1$，此时 $W_n Y_n$ 可解释为邻居观测值的加权平均。
 - **问题**：若 $W_n$ 行标准化且 $X_n$ 包含截距项，则 $W_n X_n$ 与 $X_n$ 可能产生多重共线性。此时应去除 $W_n X_n$ 中的截距列。
 
-#### 1.3.4 注意事项
+#### 1.2.4 注意事项
 - $W_n$ 不一定对称，尤其在行标准化后。
 - 为保证估计理论的大样本性质，常假设 $\{W_n\}$ 的行和与列和一致有界（即不存在"主导单位"）。
 - 若存在主导单位（如国际贸易中的大国），需采用 [Lee, Yang & Yu (2022) 等：QML and Efficient GMM Estimation of Spatial Autoregressive Models with Dominant (Popular) Units](https://www.tandfonline.com/doi/full/10.1080/07350015.2022.2041424#abstract) 扩展方法。
 
-## 2. Linear-quadratic forms
+
+### 1.3 空间计量中的矩阵范数应用
+
+在空间计量中，矩阵范数常用于分析空间权重矩阵 $W_n$ 的性质。一个重要结果是：
+
+当 $||\lambda W_n||_\infty < 1$ 时（例如 $||W_n||_\infty = 1$ 且 $|\lambda| < 1$），有：
+$$
+(I_n - \lambda W_n)^{-1} = \sum_{j=0}^\infty (\lambda W_n)^j = I_n + \lambda W_n + \lambda^2 W_n^2 + \cdots
+$$
+
+这个展开在解释 SAR 模型中的溢出效应时非常重要：
+- $\lambda W_n$ 表示直接邻居的影响
+- $\lambda^2 W_n^2$ 表示二阶邻居的影响（邻居的邻居）
+- 以此类推，高阶项表示更远距离的间接影响
+
+对于 SAR 模型 $Y_n = \lambda W_n Y_n + X_n \beta + V_n$，其简化形式为：
+$$
+Y_n = \sum_{j=0}^\infty \lambda^j W_n^j (X_n \beta + V_n)
+$$
+显示了外生变量 $X_n$ 和误差 $V_n$ 通过空间结构的传播机制。
+
+此外，我们有级数截断的误差界：
+
+$$
+\left\|\sum_{j=m}^{\infty} \lambda^j W_n^j\right\|_{\infty} \leq \sum_{j=m}^{\infty} \|\lambda W_n^j\|_{\infty} \leq \sum_{j=m}^{\infty} \|\lambda W_n\|^j_{\infty}\leq \sum_{j=m}^{\infty} |\lambda|^j = \frac{|\lambda|^m}{1-|\lambda|}
+$$
+
+当 $m$ 足够大时，$\frac{|\lambda|^m}{1-|\lambda|}$ 很小。在实际应用中，常使用有限项近似：
+
+$$
+(I_n - \lambda W_n)^{-1} \approx I_n + \lambda W_n + \lambda^2 W_n^2 + \cdots + \lambda^m W_n^m
+$$
+
+其中 $m$ 的选择使得 $\left\|\sum_{j=m+1}^\infty \lambda^j W_n^j\right\|$ 足够小。
+
+
+#### 1.3.1 空间权重矩阵的规范性条件
+在空间计量理论中，常假设空间权重矩阵 $\{W_n\}$ 和 $\{S_n^{-1}\}$（其中 $S_n = I_n - \lambda W_n$）在行和与列和上一致有界。等价地说，假设 $\{\|W_n\|_1\}$ 和 $\{\|W_n\|_\infty\}$ 是有界序列，同样 $S_n^{-1}$ 的最大行和与列和范数也有界。
+
+这一假设的一个重要性质是：如果 $\{A_n\}$ 和 $\{B_n\}$ 在行和（列和）上一致有界，那么 $\{A_n B_n\}$ 也在行和（列和）上一致有界。这源于矩阵范数的次可乘性，例如：当 $\|A_n\|_\infty \leq c$ 且 $\|B_n\|_\infty \leq c$ 时，
+$$
+\|A_n B_n\|_\infty \leq \|A_n\|_\infty \|B_n\|_\infty \leq c^2.
+$$
+
+
+**经济含义**：这一假设意味着不存在"主导"的空间单位，即所有空间单位的影响都是有界的。这在许多现实经济应用中是一个合理的假设，但在某些情况下（如国际贸易中美国和中国这样的大国）可能不成立。当存在主导空间单位时，需要参考 [Lee, Yang & Yu (2022) 等：QML and Efficient GMM Estimation of Spatial Autoregressive Models with Dominant (Popular) Units](https://www.tandfonline.com/doi/full/10.1080/07350015.2022.2041424#abstract) 等扩展方法。
+
+
  
 
 

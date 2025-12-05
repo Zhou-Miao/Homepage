@@ -61,6 +61,8 @@ markdown_extensions:
 extra_javascript:
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+
 ######## ---------------------------------------- ########
 
 
@@ -73,5 +75,6 @@ nav:
   - Large Sample Theory:
     - 空间计量经济学: home/LST2025/LST_Chapter4_SAR.md
     - 矩阵代数: home/LST2025/LST_Chapter4_matrix.md
+    - 线性-二次型: home/LST2025/LST_Chapter4_LQF.md
 
 ######## ---------------------------------------- ########
