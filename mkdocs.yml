@@ -1,7 +1,7 @@
-site_name: My site
+site_name: Cauliflower
 site_url: https://mydomain.org/mysite
 
-
+######## ---------------------------------------- ########
 # Site configuration for MkDocs with Material theme
 theme:
   name: material
@@ -29,15 +29,49 @@ theme:
         name: Switch to system preference
   
   features:
-    - navigation.tabs
+    - navigatio#n.tabs
     - navigation.top
     - navigation.sections
+######## ---------------------------------------- ########
 
 
-# 
+
+######## ---------------------------------------- #######
+# Table of Contents configuration
+# markdown_extensions:
+#   - toc:
+#       title: On this page
+#       permalink: true
+#       toc_depth: 3
+######## ---------------------------------------- ########
+
+
+
+######## ---------------------------------------- ########
+# Enable MathJax support for rendering mathematical expressions
+markdown_extensions:
+  - toc:
+      title: On this page
+      permalink: true
+      toc_depth: 3
+
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+######## ---------------------------------------- ########
+
+
+
+######## ---------------------------------------- ########
+# document structure
 nav:
   - Home: 
     - index.md
   - Large Sample Theory:
-    - 大数定律: home/page-1.md
-    - 中心极限定理: home/page-2.md
+    - 空间计量经济学: home/LST2025/LST_Chapter4_SAR.md
+    - 矩阵代数: home/LST2025/LST_Chapter4_matrix.md
+
+######## ---------------------------------------- ########
