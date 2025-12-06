@@ -267,7 +267,7 @@ $$
 
 #### 2.1.4 最优工具变量 (Best IV)
 
-Lee (2003) 提出了 SAR 模型的最优 IV 估计。因为 $\mathbb{E} W_n Y_n = W_n S_n^{-1} X_n \beta_0 = G_n X_n \beta_0$，所以 $W_n Y_n$ 的最优工具变量应为 $G_n X_n \beta_0$。
+[Lee (2003): Best Spatial Two-Stage Least Squares Estimators for a Spatial Autoregressive Model with Autoregressive Disturbances.](https://www.tandfonline.com/doi/full/10.1081/ETC-120025891) 提出了 SAR 模型的最优 IV 估计。因为 $\mathbb{E} W_n Y_n = W_n S_n^{-1} X_n \beta_0 = G_n X_n \beta_0$，所以 $W_n Y_n$ 的最优工具变量应为 $G_n X_n \beta_0$。
 
 严格论证如下：回顾 $\mathbb{E} Z_n' Q_n \equiv [G_n X_n \beta_0 ~ ~ X_n] Q$。由定理 1，
 
@@ -307,3 +307,237 @@ $$
 $$
 
 其中 $\hat{Z}_n \equiv [\hat{G}_n X_n \hat{\beta}_{2sls} ~ ~ X_n]$，$\hat{G}_n = W_n (I_n - \hat{\lambda}_{2sls} W_n)^{-1}$。
+
+#### 2.1.6 对应代码实现
+
+``` R title="2SLS for SAR model"
+####################################################
+# Three main functions for SAR model 2SLS estimation
+####################################################
+
+# IV: (X, WX*)
+SAR_2SLS1 <- function(Y, X, W){
+  n = length(Y)
+  
+  X_star <- X[, -1, drop=FALSE]
+  
+  # IV matrix
+  WX_star <- W %*% X_star
+  Q <- cbind(X, WX_star)
+  
+  # endogenous variable
+  WY <- W %*% Y
+  Z <- cbind(WY, X)
+  
+  # First stage
+  P_Q <- Q %*% solve(t(Q) %*% Q) %*% t(Q)
+  Z_hat <- P_Q %*% Z
+  
+  # Second stage
+  theta_hat <- solve(t(Z_hat) %*% Z_hat) %*% t(Z_hat) %*% Y
+  
+  return(list(
+    lambda = theta_hat[1],
+    beta = theta_hat[-1]
+  ))
+}
+
+
+# IV: (X, WX*, W^2X*)
+SAR_2SLS2 <- function(Y, X, W){
+  n = length(Y)
+  
+  X_star <- X[, -1, drop=FALSE]
+  
+  # IV matrix
+  WX_star <- W %*% X_star
+  W2X_star <- W %*% WX_star
+  Q <- cbind(X, WX_star, W2X_star)
+  
+  # endogenous variable
+  WY <- W %*% Y
+  Z <- cbind(WY, X)
+  
+  # First stage
+  P_Q <- Q %*% solve(t(Q) %*% Q) %*% t(Q)
+  Z_hat <- P_Q %*% Z
+  
+  # Second stage
+  theta_hat <- solve(t(Z_hat) %*% Z_hat) %*% t(Z_hat) %*% Y
+  
+  return(list(
+    lambda = theta_hat[1],
+    beta = theta_hat[-1]
+  ))
+}
+
+
+
+# feasible best IV
+SAR_BIV <- function(Y, X, W){
+  n <- length(Y)
+  
+  X_star <- X[, -1, drop=FALSE]
+  
+  # endogenous variable
+  WY <- W %*% Y
+  Z <- cbind(WY, X)
+  
+  # step 1: initial estimate via SAR_2SLS2
+  init_fit <- SAR_2SLS2(Y, X, W)
+  lambda_init <- init_fit$lambda
+  beta_init <- init_fit$beta
+  
+  # step 2: construct best IV
+  S_inv <- solve(diag(n) - lambda_init * W)
+  G_n <- W %*% S_inv
+  GX_beta <- G_n %*% X %*% beta_init
+  Q <- cbind(GX_beta, X) # best IV matrix
+  
+  # # best IV estimation
+  # # first stage
+  # P_Q <- Q %*% solve(t(Q) %*% Q) %*% t(Q)
+  # Z_hat <- P_Q %*% Z
+  # # second stage
+  # theta_hat <- solve(t(Z_hat) %*% Z_hat) %*% t(Z_hat) %*% Y
+  
+  # alternative: direct estimation
+  theta_hat <- solve(t(Q) %*% Z) %*% t(Q) %*% Y
+  
+  return(list(
+    lambda = theta_hat[1],
+    beta = theta_hat[-1]
+  ))
+}
+
+
+
+####################################################
+# Simulation Studies
+####################################################
+
+
+# Simulation parameters
+n0_vec <- c(7, 10, 20)  # Different grid sizes
+n_rep <- 1000           # Number of replications
+lambda_true <- 0.4
+beta_true <- c(1, 1, 1) # Intercept, beta1, beta2
+
+# Storage for summary results
+simulation_table <- data.frame()
+
+set.seed(2025) # Reproducibility
+
+for(n0 in n0_vec){
+  n <- n0^2
+  cat(sprintf("Processing sample size: n = %d (grid %dx%d)\n", n, n0, n0))
+  
+  # 1. Spatial Weight Matrix Construction (Rook Contiguity)
+  # -----------------------------------------------------
+  coords <- expand.grid(row=1:n0, col=1:n0)
+  W0 <- matrix(0, n, n)
+  
+  # Efficiently build adjacency
+  for(i in 1:n){
+    for(j in 1:n){
+      if(i != j){
+        dist <- abs(coords[i,1] - coords[j,1]) + abs(coords[i,2] - coords[j,2])
+        if(dist == 1){
+          W0[i,j] <- 1
+        }
+      }
+    }
+  }
+  
+  # Row normalization
+  rs <- rowSums(W0)
+  W <- W0
+  if(any(rs > 0)){
+    W[rs>0, ] <- W0[rs>0, ] / rs[rs>0]
+  }
+  
+  # Pre-calculate (I - lambda*W)^-1 for DGP
+  S_inv_true <- solve(diag(n) - lambda_true * W)
+  
+  # 2. Monte Carlo Loop
+  # -------------------
+  # Store estimates: Columns = [lambda, beta0, beta1, beta2]
+  res_2sls1 <- matrix(NA, n_rep, 4)
+  res_2sls2 <- matrix(NA, n_rep, 4)
+  res_biv   <- matrix(NA, n_rep, 4)
+  
+  for(r in 1:n_rep){
+    # Generate X: 1st col is 1, rest are N(0,1)
+    X <- cbind(1, rnorm(n), rnorm(n))
+    
+    # Generate error term V: t-distribution with df=5
+    V <- rt(n, df = 5)
+    
+    # Generate dependent variable Y
+    # Y = (I - lambda W)^-1 (X beta + V)
+    Y <- S_inv_true %*% (X %*% beta_true + V)
+    
+    # Method 1: 2SLS (X, WX*)
+    est1 <- SAR_2SLS1(Y, X, W)
+    res_2sls1[r, ] <- c(est1$lambda, est1$beta)
+    
+    # Method 2: 2SLS (X, WX*, W^2X*)
+    est2 <- SAR_2SLS2(Y, X, W)
+    res_2sls2[r, ] <- c(est2$lambda, est2$beta)
+    
+    # Method 3: Best IV
+    est3 <- SAR_BIV(Y, X, W)
+    res_biv[r, ] <- c(est3$lambda, est3$beta)
+  }
+  
+  # 3. Calculate Bias and RMSE
+  # --------------------------
+  # True parameter vector
+  theta_true <- c(lambda_true, beta_true)
+  
+  calc_metrics <- function(est_matrix, true_vec){
+    bias <- colMeans(est_matrix) - true_vec
+    rmse <- sqrt(colMeans((est_matrix - matrix(true_vec, nrow=nrow(est_matrix), ncol=length(true_vec), byrow=TRUE))^2))
+    return(c(bias, rmse))
+  }
+  
+  m1 <- calc_metrics(res_2sls1, theta_true)
+  m2 <- calc_metrics(res_2sls2, theta_true)
+  m3 <- calc_metrics(res_biv, theta_true)
+  
+  # Organize into rows for the table
+  # Structure: Method, n, Bias_lambda, RMSE_lambda, Bias_beta1, RMSE_beta1 (showing selected params)
+  
+  # For brevity in the table, let's show stats for lambda and the first slope coefficient (beta_1)
+  # Indices in vectors: 
+  # Est columns: 1(lambda), 2(beta0), 3(beta1), 4(beta2)
+  # Metric vector: 1-4 (Bias), 5-8 (RMSE)
+  
+  row1 <- data.frame(Method="2SLS1", n=n, 
+                     Bias_Lam=m1[1], RMSE_Lam=m1[5], 
+                     Bias_B1=m1[2], RMSE_B1=m1[6],
+                     Bias_B2=m1[3], RMSE_B2=m1[7], 
+                     Bias_B3=m1[4], RMSE_B3=m1[8])
+  row2 <- data.frame(Method="2SLS2", n=n, 
+                     Bias_Lam=m2[1], RMSE_Lam=m2[5], 
+                     Bias_B1=m2[2], RMSE_B1=m2[6],
+                     Bias_B2=m2[3], RMSE_B2=m2[7], 
+                     Bias_B3=m2[4], RMSE_B3=m2[8])
+  row3 <- data.frame(Method="BestIV", n=n, 
+                     Bias_Lam=m3[1], RMSE_Lam=m3[5], 
+                     Bias_B1=m3[2], RMSE_B1=m3[6],
+                     Bias_B2=m3[3], RMSE_B2=m3[7], 
+                     Bias_B3=m3[4], RMSE_B3=m3[8])
+  
+  simulation_table <- rbind(simulation_table, row1, row2, row3)
+}
+
+# Print the Final Summary Table
+print(simulation_table, digits=4)
+
+
+####################################################
+# Comparison & Analysis
+####################################################
+
+```
