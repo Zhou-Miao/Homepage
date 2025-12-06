@@ -156,11 +156,7 @@ P\left(|V_n^\prime A_n V_n - \mathbb{E}(V_n^\prime A_n V_n)| > \epsilon n\right)
 $$
 所以 $V_n^\prime A_n V_n = \mathbb{E}(V_n^\prime A_n V_n) + O_p(n) = O_p(n)$。
 
-(4) 同样由 Chebyshev 不等式：
-$$
-P\left(\left|\frac{1}{n} V_n^\prime A_n V_n - \frac{1}{n} \mathbb{E}(V_n^\prime A_n V_n)\right| > \epsilon n^{-1/2}\right) \leq \frac{\operatorname{Var}(V_n^\prime A_n V_n)/n^2}{\epsilon^2/n} = \frac{O(n)/n^2}{\epsilon^2/n} = O(1)
-$$
-更精确地，由 $\operatorname{Var}(V_n^\prime A_n V_n) = O(n)$，有：
+(4) 由 $\operatorname{Var}(V_n^\prime A_n V_n) = O(n)$，有：
 $$
 \operatorname{Var}\left(\frac{1}{n} V_n^\prime A_n V_n\right) = \frac{1}{n^2} \operatorname{Var}(V_n^\prime A_n V_n) = O\left(\frac{1}{n}\right)
 $$
@@ -173,17 +169,17 @@ $$
 
 ## 2.3 鞅差分解
 
-线性-二次型的中心极限定理依赖于鞅差序列的中心极限定理。
+线性-二次型的中心极限定理依赖于**鞅差序列**的中心极限定理。
 
-**定义 3（适应随机序列）**：设 $\{z_{nt}: t = 1, \ldots, n\}$ 是随机变量的三角阵列，$\{\mathcal{J}_{nt}\}$ 是 $\sigma$-域的三角阵列，满足 $\mathcal{J}_{n,t-1} \subseteq \mathcal{J}_{nt}$ 对所有 $n$ 和 $t$。如果 $z_{nt}$ 关于 $\mathcal{J}_{nt}$ 可测，则 $\{z_{nt}, \mathcal{J}_{nt}: t = 1, \ldots, n\}$ 称为**适应随机序列**。
+**定义 3（适应随机序列）**：设 $\{z_{nt}: t = 1, \ldots, n\}$ 是随机变量的三角阵列，$\{\mathcal{J}_{nt}\}$ 是 $\sigma$-域的三角阵列，满足 $\mathcal{J}_{n,t-1} \subseteq \mathcal{J}_{nt}$ 对所有 $n$ 和 $t$。如果 $z_{nt}$ 关于 $\mathcal{J}_{nt}$ 可测，则 $\{z_{nt}, \mathcal{J}_{nt}: t = 1, \ldots, n\}$ 称为**适应随机序列 (adapted stochastic sequence)**。
 
-$\sigma$-域 $\mathcal{J}_{nt}$ 可以看作由 $z_t$ 和一些其他随机变量的当前和过去历史生成的 $\sigma$-代数。
+- $\sigma$-域 $\mathcal{J}_{nt}$ 可以看作由 $z_{nt}$ 和一些其他随机变量的当前和过去历史生成的 $\sigma$-代数。
 
 **定义 4（鞅差阵列）**：设 $\{y_{nt}, \mathcal{J}_{nt}\}$ 是适应随机序列。那么 $\{y_{nt}, \mathcal{J}_{nt}\}$ 是**鞅差阵列（MDA）** 当且仅当 $\mathbb{E}(y_{nt} | \mathcal{J}_{n,t-1}) = 0$ 对所有 $n$ 和 $t \geq 2$ 成立。
 
-**引理 5（线性-二次型的鞅差分解）**：假设 $v_{ni}$ 是 i.i.d. 的，满足 $\mathbb{E} v_i = 0$ 和有限方差。那么线性-二次型 $Q_n = V_n^\prime A_n V_n + b_n^\prime V_n$ 可以写成一个鞅差阵列的和。
+**引理 5（线性-二次型的鞅差分解）**：假设 $v_{ni}$ 是 i.i.d. 的，满足 $\mathbb{E} v_{ni} = 0$ 和有限方差。对于线性-二次型 $Q_n = V_n^\prime A_n V_n + b_n^\prime V_n$，那么 $ Q_n - \mathbb{E} Q_n$ 可以写成一个鞅差阵列的和。
 
-*完整证明*：
+*证明*：
 将 $Q_n - \mathbb{E} Q_n$ 重写为：
 <!-- 这是数学公式 -->
 $$
@@ -221,15 +217,15 @@ $$
 
 ## 2.4 中心极限定理
 
-**定理 6（鞅差中心极限定理）**：设 $\{\xi_{Ti}\}$ 是鞅差阵列。如果当 $T \to \infty$ 时：
+**定理 6（鞅差中心极限定理）**：设 $\{\xi_{Tt}, \mathcal{J}_{T,t}\}$ 是鞅差阵列。如果当 $T \to \infty$ 时：
 
-(i) $\sum_{t=1}^T v_{Ti} \overset{p}{\to} \sigma^2$，其中 $\sigma^2 > 0$，$v_{Ti} = \mathbb{E}(\xi_{Ti}^2 | \mathcal{J}_{T,t-1})$ 是条件方差
+(i) $\sum_{t=1}^T v_{Tt} \overset{p}{\to} \sigma^2$，其中 $\sigma^2 > 0$，$v_{Tt} = \mathbb{E}(\xi_{Tt}^2 | \mathcal{J}_{T,t-1})$ 是条件方差；
 
-(ii) 对任意 $\epsilon > 0$，$\sum_{t=1}^T \mathbb{E}[\xi_{Ti}^2 I(|\xi_{Ti}| > \epsilon) | \mathcal{J}_{T,t-1}] \overset{p}{\to} 0$（Lindeberg 条件）
+(ii) 对任意 $\epsilon > 0$，$\sum_{t=1}^T \mathbb{E}[\xi_{T_t}^2 I(|\xi_{T_t}| > \epsilon) | \mathcal{J}_{T,t-1}] \overset{p}{\to} 0$（Lindeberg 条件）；
 
 则：
 $$
-\xi_{T1} + \cdots + \xi_{TT} \overset{d}{\to} N(0, \sigma^2)
+\xi_{T1} + \cdots + \xi_{TT} \overset{d}{\to} N(0, \sigma^2).
 $$
 
 **定理 7（Kelejian and Prucha, 2001）**：设 $V_n = (v_{1,n}, \ldots, v_{n,n})$ 的元素是独立的，满足 $\mathbb{E} v_{i,n} = 0$。$A_n = (a_{ij,n})$ 是非随机对称矩阵，其列和一致有界。$b_n = (b_{1,n}, \ldots, b_{n,n})$ 是非随机向量，满足 $\sup_n \frac{1}{n} \sum_{i=1}^n |b_{i,n}|^{2+\eta_1} < \infty$ 对某个 $\eta_1 > 0$。假设 $\sup_{i,n} \mathbb{E}|v_{i,n}|^{4+\eta_2} < \infty$ 对某个 $\eta_2 > 0$ 成立。记 $Q_n \equiv V_n^\prime A_n V_n + b_n^\prime V_n$，$\sigma_{Q_n} \equiv [\operatorname{Var}(Q_n)]^{1/2}$。如果 $n^{-1} \sigma_{Q_n}^2 \geq c$ 对某个 $c > 0$ 对所有 $n$ 成立，那么：

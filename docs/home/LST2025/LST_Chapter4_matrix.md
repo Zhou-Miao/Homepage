@@ -91,10 +91,6 @@ $$
 $$
 因此 $||A^{-1}|| \geq \frac{1}{||A||}$。
 
-**引理**：$n\times n$ 阶矩阵 $A$ 的特征值全正 ($A$ 是正定矩阵)，则 $\frac{1}{n} [\operatorname{tr} (A) - \ln |A| - n] \geq 0$，等式成立当且仅当所有特征值都是 $1$。
-
-*证明*：由不等式 $ x - \ln x -1 \geq 0$ 且等式成立当且仅当 $x=1, \operatorname{tr} (A) - \ln |A| - n = \sum
-_{i=1}^n \rho_i - \ln \prod_{i=1}^n \rho_i - n = \sum_{i=1}^n [\rho_i - \ln \rho_i -1] \geq 0$。
 
 
 ### 1.3 常用矩阵范数
@@ -137,7 +133,20 @@ $$
 
 - 当 $A$ 对称时，$||A||_{2} = \max_i |\lambda_i(A)|$
 
+*证明*： $A'A $ 是对称半正定矩阵，存在一个正交矩阵 $P$ 和对角矩阵 $\Lambda = diag(\lambda_1, \ldots, \lambda_n)$ 使得 $A'A = P' \Lambda P$，从而
+<!-- 这是数学公式 -->
+$$
+\begin{aligned}
+||A||_{2}^2 & = \sup_{\|x\|=1} \| Ax\|_2^2 = \sup_{\|x\|=1} x'A'Ax =  \sup_{\|x\|=1} x' P' \Lambda P x \\
+& = \sup_{\|y\|=1} y' \Lambda y = \sup_{\|y\|=1} \sum_{i=1}^n \lambda_i y_i^2 \leq \lambda_1,
+\end{aligned}
+$$
+<!-- 公式结束 -->
+当 $ y = (1,0, \ldots,0)'$ 时，等号成立。其中 $y = Px$ 是一个双射，且满足 $\|y\|^2= x' P' P x = x'x=1$。
+
 ### 1.4 谱半径
+
+矩阵范数的一个重要应用就是控制矩阵的特征值。
 
 **定义（谱半径）**：矩阵 $A$ 的谱半径 $\rho(A)$ 定义为：
 $$
@@ -170,3 +179,8 @@ $$
  1. 更一般地，如果 $\rho(A) \leq 1$，结论仍然成立。
  2. 如果 $\rho(A) \geq 1$，结论不成立。即使 $(I - A)^{-1}$ 存在，结论也不成立。
 
+
+**引理**：$n\times n$ 阶矩阵 $A$ 的特征值全正 ($A$ 是正定矩阵)，则 $\frac{1}{n} [\operatorname{tr} (A) - \ln |A| - n] \geq 0$，等式成立当且仅当所有特征值都是 $1$。
+
+*证明*：由不等式 $ x - \ln x -1 \geq 0$ 且等式成立当且仅当 $x=1, \operatorname{tr} (A) - \ln |A| - n = \sum
+_{i=1}^n \rho_i - \ln \prod_{i=1}^n \rho_i - n = \sum_{i=1}^n [\rho_i - \ln \rho_i -1] \geq 0$。

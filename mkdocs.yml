@@ -39,10 +39,7 @@ theme:
 ######## ---------------------------------------- ########
 
 
-
-
 ######## ---------------------------------------- ########
-# Enable MathJax support for rendering mathematical expressions
 markdown_extensions:
 # Table of Contents configuration
   - toc:
@@ -50,6 +47,13 @@ markdown_extensions:
       permalink: true
       toc_depth: 3
 
+
+# notes,questions, etc.
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+# MathJax/KaTeX support
   - pymdownx.arithmatex:
       generic: true
 
