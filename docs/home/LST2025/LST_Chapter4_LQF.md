@@ -40,12 +40,14 @@ $$
 #### (2) $\mathbb{E}[(V_n^\prime A_n V_n)^2] = (\mu_4 - 3\sigma^4)\sum_{i=1}^n a_{ii}^2 + \sigma^4[\operatorname{tr}^2(A_n) + \operatorname{tr}(A_n A_n^\prime) + \operatorname{tr}(A_n^2)]$
 
 *证明*：
+<!-- 这是数学公式 -->
 $$
 \begin{aligned}
 \mathbb{E}[(V_n^\prime A_n V_n)^2] &= \mathbb{E}\left[\left(\sum_{i=1}^n \sum_{j=1}^n a_{ij} v_i v_j\right)^2\right] \\
 &= \mathbb{E}\left[\sum_{i=1}^n \sum_{j=1}^n \sum_{k=1}^n \sum_{l=1}^n a_{ij} a_{kl} v_i v_j v_k v_l\right]
 \end{aligned}
 $$
+<!-- 公式结束 -->
 
 由于 $v_i$ i.i.d. 且 $\mathbb{E} v_i = 0$，$\mathbb{E}[v_i v_j v_k v_l]$ 仅当索引配对时非零。有四种配对情况：
 
@@ -70,6 +72,7 @@ $$
    $$
 
 将四种情况相加：
+<!-- 这是数学公式 -->
 $$
 \begin{aligned}
 \mathbb{E}[(V_n^\prime A_n V_n)^2] &= \mu_4 \sum_{i=1}^n a_{ii}^2 + \sigma^4 [(\operatorname{tr}^2(A_n) - \sum a_{ii}^2) \\
@@ -77,18 +80,20 @@ $$
 &= (\mu_4 - 3\sigma^4) \sum_{i=1}^n a_{ii}^2 + \sigma^4 [\operatorname{tr}^2(A_n) + \operatorname{tr}(A_n A_n^\prime) + \operatorname{tr}(A_n^2)]
 \end{aligned}
 $$
+<!-- 公式结束 -->
 
 #### (3) $\operatorname{Var}(V_n^\prime A_n V_n) = (\mu_4 - 3\sigma^4)\sum_{i=1}^n a_{ii}^2 + \sigma^4[\operatorname{tr}(A_n A_n^\prime) + \operatorname{tr}(A_n^2)]$
 
 *证明*：由方差定义 $\operatorname{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}X)^2$，结合 (1) 和 (2)：
+<!-- 这是数学公式 -->
 $$
 \begin{aligned}
 \operatorname{Var}(V_n^\prime A_n V_n) &= \mathbb{E}[(V_n^\prime A_n V_n)^2] - [\mathbb{E}(V_n^\prime A_n V_n)]^2 \\
-&= (\mu_4 - 3\sigma^4)\sum_{i=1}^n a_{ii}^2 + \sigma^4[\operatorname{tr}^2(A_n) + \operatorname{tr}(A_n A_n^\prime) + \operatorname{tr}(A_n^2)] - \sigma^4 \operatorname{tr}^2(A_n) \\
-&= (\mu_4 - 3\sigma^4)\sum_{i=1}^n a_{ii}^2 + \sigma^4[\operatorname{tr}(A_n A_n^\prime) + \operatorname{tr}(A_n^2)]
+& = (\mu_4 - 3\sigma^4)\sum_{i=1}^n a_{ii}^2 + \sigma^4[\operatorname{tr}^2(A_n) + \operatorname{tr}(A_n A_n^\prime) + \operatorname{tr}(A_n^2)] - \sigma^4 \operatorname{tr}^2(A_n) \\
+& = (\mu_4 - 3\sigma^4)\sum_{i=1}^n a_{ii}^2 + \sigma^4[\operatorname{tr}(A_n A_n^\prime) + \operatorname{tr}(A_n^2)]
 \end{aligned}
 $$
-
+<!-- 公式结束 -->
 
 **特殊情况**：
 
@@ -180,12 +185,14 @@ $\sigma$-域 $\mathcal{J}_{nt}$ 可以看作由 $z_t$ 和一些其他随机变�
 
 *完整证明*：
 将 $Q_n - \mathbb{E} Q_n$ 重写为：
+<!-- 这是数学公式 -->
 $$
 \begin{aligned}
 Q_n - \mathbb{E} Q_n &= \sum_{i=1}^n b_i v_i + \sum_{i=1}^n \sum_{j=1}^n a_{ij} v_i v_j - \sigma^2 \operatorname{tr}(A_n) \\
 &= \sum_{i=1}^n b_i v_i + \sum_{i=1}^n a_{ii} (v_i^2 - \sigma^2) + 2\sum_{i=1}^n \sum_{j=1}^{i-1} a_{ij} v_i v_j
 \end{aligned}
 $$
+<!-- 公式结束 -->
 
 现在，将上式重新组织为求和形式。定义：
 $$
@@ -197,6 +204,7 @@ Q_n - \mathbb{E} Q_n = \sum_{i=1}^n Z_{ni}
 $$
 
 定义 $\sigma$-域 $\mathcal{J}_{ni} = \sigma\{v_1, \ldots, v_i\}$（由 $v_1, \ldots, v_i$ 生成的 $\sigma$-代数）。由于 $v_i$ 是 i.i.d. 的且均值为零，有：
+<!-- 这是数学公式 -->
 $$
 \begin{aligned}
 \mathbb{E}(Z_{ni} | \mathcal{J}_{n,i-1}) &= \mathbb{E}(b_i v_i | \mathcal{J}_{n,i-1}) + \mathbb{E}(a_{ii}(v_i^2 - \sigma^2) | \mathcal{J}_{n,i-1}) + \mathbb{E}(2v_i \sum_{j=1}^{i-1} a_{ij} v_j | \mathcal{J}_{n,i-1}) \\
@@ -205,6 +213,7 @@ $$
 &= 0
 \end{aligned}
 $$
+<!-- 公式结束 -->
 
 因此 $\{(Z_{ni}, \mathcal{J}_{ni})\}$ 构成一个鞅差三角阵列。
 

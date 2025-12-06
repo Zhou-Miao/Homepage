@@ -111,10 +111,11 @@ $$
 在空间计量理论中，常假设空间权重矩阵 $\{W_n\}$ 和 $\{S_n^{-1}\}$（其中 $S_n = I_n - \lambda W_n$）在行和与列和上一致有界。等价地说，假设 $\{\|W_n\|_1\}$ 和 $\{\|W_n\|_\infty\}$ 是有界序列，同样 $S_n^{-1}$ 的最大行和与列和范数也有界。
 
 这一假设的一个重要性质是：如果 $\{A_n\}$ 和 $\{B_n\}$ 在行和（列和）上一致有界，那么 $\{A_n B_n\}$ 也在行和（列和）上一致有界。这源于矩阵范数的次可乘性，例如：当 $\|A_n\|_\infty \leq c$ 且 $\|B_n\|_\infty \leq c$ 时，
+<!-- 这是数学公式 -->
 $$
 \|A_n B_n\|_\infty \leq \|A_n\|_\infty \|B_n\|_\infty \leq c^2.
 $$
-
+<!-- 公式结束 -->
 
 **经济含义**：这一假设意味着不存在"主导"的空间单位，即所有空间单位的影响都是有界的。这在许多现实经济应用中是一个合理的假设，但在某些情况下（如国际贸易中美国和中国这样的大国）可能不成立。当存在主导空间单位时，需要参考 [Lee, Yang & Yu (2022) 等：QML and Efficient GMM Estimation of Spatial Autoregressive Models with Dominant (Popular) Units](https://www.tandfonline.com/doi/full/10.1080/07350015.2022.2041424#abstract) 等扩展方法。
 

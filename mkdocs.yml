@@ -7,15 +7,16 @@ theme:
   name: material
 
   palette:
-    # Palette toggle for automatic mode
-    - media: "(prefers-color-scheme)"
-      toggle:
-        icon: material/brightness-auto
-        name: Switch to light mode
+    # # Palette toggle for automatic mode
+    # - media: "(prefers-color-scheme)"
+    #   toggle:
+    #     icon: material/brightness-auto
+    #     name: Switch to light mode
 
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default 
+      primary: blue
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
@@ -32,24 +33,18 @@ theme:
     - navigatio#n.tabs
     - navigation.top
     - navigation.sections
+    - search.highlight
+    - content.code.annotate
+    
 ######## ---------------------------------------- ########
 
-
-
-######## ---------------------------------------- #######
-# Table of Contents configuration
-# markdown_extensions:
-#   - toc:
-#       title: On this page
-#       permalink: true
-#       toc_depth: 3
-######## ---------------------------------------- ########
 
 
 
 ######## ---------------------------------------- ########
 # Enable MathJax support for rendering mathematical expressions
 markdown_extensions:
+# Table of Contents configuration
   - toc:
       title: On this page
       permalink: true
@@ -62,6 +57,13 @@ extra_javascript:
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
+  # - javascripts/katex.js
+  # - https://unpkg.com/katex@0/dist/katex.min.js
+  # - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+# extra_css:
+#   - https://unpkg.com/katex@0/dist/katex.min.css
+
 
 ######## ---------------------------------------- ########
 
@@ -73,8 +75,9 @@ nav:
   - Home: 
     - index.md
   - Large Sample Theory:
-    - 空间计量经济学: home/LST2025/LST_Chapter4_SAR.md
-    - 矩阵代数: home/LST2025/LST_Chapter4_matrix.md
-    - 线性-二次型: home/LST2025/LST_Chapter4_LQF.md
+    - Spatial Econometrics:
+      - 1. 空间计量经济学简介: home/LST2025/LST_Chapter4_SAR.md
+      - 2. 矩阵代数: home/LST2025/LST_Chapter4_matrix.md
+      - 3. 线性-二次型: home/LST2025/LST_Chapter4_LQF.md
 
 ######## ---------------------------------------- ########
