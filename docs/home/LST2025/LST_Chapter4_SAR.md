@@ -73,7 +73,7 @@ $$
 - 若存在主导单位（如国际贸易中的大国），需采用 [Lee, Yang & Yu (2022) 等：QML and Efficient GMM Estimation of Spatial Autoregressive Models with Dominant (Popular) Units](https://www.tandfonline.com/doi/full/10.1080/07350015.2022.2041424#abstract) 扩展方法。
 
 
-### 1.3 空间计量中的矩阵范数应用
+### 1.3 空间计量中的[矩阵范数](LST_Chapter4_matrix.md)应用
 
 在空间计量中，矩阵范数常用于分析空间权重矩阵 $W_n$ 的性质。一个重要结果是：
 
@@ -310,6 +310,7 @@ $$
 
 #### 2.1.6 对应代码实现
 
+
 ``` R title="2SLS for SAR model"
 ####################################################
 # Three main functions for SAR model 2SLS estimation
@@ -534,10 +535,9 @@ for(n0 in n0_vec){
 
 # Print the Final Summary Table
 print(simulation_table, digits=4)
-
-
-####################################################
-# Comparison & Analysis
-####################################################
-
 ```
+
+
+
+### 2.2 QMLE
+

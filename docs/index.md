@@ -1,17 +1,12 @@
-# Welcome to MkDocs
+# 学习笔记与心得分享
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+欢迎来到我的知识库！这里记录了我的学习历程、技术笔记和个人心得。
 
-## Commands
+## 📚 最新文章
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+### 大样本理论
+- [空间计量经济学](home/LST2025/LST_Chapter4_SAR.md)
 
-## Project layout
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+
+

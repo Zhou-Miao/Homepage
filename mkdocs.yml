@@ -86,8 +86,7 @@ extra_javascript:
 ######## ---------------------------------------- ########
 # document structure
 nav:
-  - Home: 
-    - index.md
+  - Home: index.md
   - Large Sample Theory:
     - Spatial Econometrics:
       - 1. 空间计量经济学简介: home/LST2025/LST_Chapter4_SAR.md
