@@ -230,6 +230,7 @@ $$
 
 因此只需证明 $\frac{1}{n} Z_n' Q_n \overset{p}{\to} M_{ZQ}$。
 
+**方法一**：
 由于 $Z_n' Q_n$ 的第二部分 $X_n' Q$ 是非随机的，故只需证明
 
 $$
@@ -264,8 +265,13 @@ $$
 
 因此 $\frac{1}{n} Z_n' Q_n \overset{p}{\to} M_{ZQ}$，定理得证。
 
+**方法二**：
+$$
+\frac{1}{n} (W_n Y_n - G_n X_n \beta_0)' Q_n = \frac{1}{n} V_n'(S_n^{-1})' W_n' Q_n .
+$$
+因  $\sup_n \| (S_n^{-1})' W_n' Q_n \|_\infty \leq \sup_n \|(S_n^{-1})' W_n'\|_\infty \|Q_n \|_\infty \leq \|(S_n^{-1})\|_1 \|W_n\|_1 \|Q_n \|_\infty \leq \infty$, 所以 $(S_n^{-1})' W_n' Q_n$ 中的每个元素都是一致有界（且非随机的），根据弱大数定律，$\frac{1}{n} V_n'(S_n^{-1})' W_n' Q_n \rightarrow_p 0$，因此定理得证。
 
-#### 2.1.4 最优工具变量 (Best IV)
+### 2.2 最优工具变量 (Best IV)
 
 [Lee (2003): Best Spatial Two-Stage Least Squares Estimators for a Spatial Autoregressive Model with Autoregressive Disturbances.](https://www.tandfonline.com/doi/full/10.1081/ETC-120025891) 提出了 SAR 模型的最优 IV 估计。因为 $\mathbb{E} W_n Y_n = W_n S_n^{-1} X_n \beta_0 = G_n X_n \beta_0$，所以 $W_n Y_n$ 的最优工具变量应为 $G_n X_n \beta_0$。
 
@@ -295,7 +301,7 @@ $$
 
 换言之，在 $v_i$ i.i.d. $(0, \sigma^2)$ 时，**$\mathbb{E} Z_n$ 是最优工具变量**，且 **$G_n X_n \beta_0$ 是 $W_n Y_n$ 的最优 IV**。
 
-#### 2.1.5 可行的最优 IV 估计
+#### 2.2.1 可行的最优 IV 估计
 
 实际中 $\beta_0$ 未知，可行的最优 IV 估计可按以下两步进行：
 
@@ -308,7 +314,7 @@ $$
 
 其中 $\hat{Z}_n \equiv [\hat{G}_n X_n \hat{\beta}_{2sls} ~ ~ X_n]$，$\hat{G}_n = W_n (I_n - \hat{\lambda}_{2sls} W_n)^{-1}$。
 
-#### 2.1.6 对应代码实现
+#### 2.2.2 对应代码实现
 
 
 ``` R title="2SLS for SAR model"
@@ -539,5 +545,23 @@ print(simulation_table, digits=4)
 
 
 
-### 2.2 QMLE
+### 2.3 QMLE
+参考文献：[Lee, L., 2004. Asymptotic distributions of quasi-maximum likelihood estimators
+for spatial autoregressive models. Econometrica 72, 1899–1925.](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1468-0262.2004.00558.x)
+
+#### 2.3.1 似然函数与估计量
+
+
+#### 2.3.2 一致性
+
+
+
+#### 2.3.3 渐近正态性
+
+
+
+
+### 2.4 GMM
+参考文献：[Lee, L., 2007. GMM and 2SLS estimation of mixed regressive, spatial
+autoregressive models. J. Econometrics 137, 489–514.](https://www.sciencedirect.com/science/article/abs/pii/S0304407606000662)
 
