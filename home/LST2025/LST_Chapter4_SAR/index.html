@@ -1,0 +1,1350 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mydomain.org/mysite/home/LST2025/LST_Chapter4_SAR/">
+      
+      
+        <link rel="prev" href="../../..">
+      
+      
+        <link rel="next" href="../LST_Chapter4_matrix/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>1. 空间计量经济学简介 - Cauliflower</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#spatial-econometrics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Cauliflower" class="md-header__button md-logo" aria-label="Cauliflower" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Cauliflower
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. 空间计量经济学简介
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Cauliflower" class="md-nav__button md-logo" aria-label="Cauliflower" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Cauliflower
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Large Sample Theory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Large Sample Theory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spatial Econometrics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Spatial Econometrics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. 空间计量经济学简介
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. 空间计量经济学简介
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 常见的空间计量模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 空间权重矩阵
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 空间计量中的矩阵范数应用
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-sar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. SAR 模型的估计
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. SAR 模型的估计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-2sls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 两阶段最小二乘 (2SLS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-best-iv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 最优工具变量 (Best IV)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-qmle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 QMLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-gmm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 GMM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LST_Chapter4_matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. 矩阵代数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LST_Chapter4_LQF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. 线性-二次型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 常见的空间计量模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 空间权重矩阵
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 空间计量中的矩阵范数应用
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-sar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. SAR 模型的估计
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. SAR 模型的估计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-2sls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 两阶段最小二乘 (2SLS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-best-iv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 最优工具变量 (Best IV)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-qmle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 QMLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-gmm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 GMM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="spatial-econometrics">空间计量经济学 （Spatial Econometrics）<a class="headerlink" href="#spatial-econometrics" title="Permanent link">&para;</a></h1>
+<h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
+<p>由于空间溢出效应、网络效应与共同冲击，经济金融、社会科学与自然科学（如气象、海洋、医学）中的数据常常存在<strong>截面相关性</strong>。传统上对截面数据常假设独立甚至同分布，因此自然的问题是：如何建模截面相关性？在计量与统计中，主要有以下几种方法：</p>
+<ul>
+<li><strong>空间计量模型</strong>：假设个体在空间或网络中存在交互或溢出效应，适用于建模<em>弱空间相关</em>，即相关性主要体现在<em>邻近个体之间</em>。</li>
+<li><strong>因子模型</strong>：主要用于建模共同冲击（强相关），如金融危机期间多数股票价格同时下跌。</li>
+<li><strong>协方差结构</strong>：直接建模协方差矩阵，如股票收益的协方差结构。</li>
+</ul>
+<h3 id="11">1.1 常见的空间计量模型<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<p>以下是几种常见的空间计量模型：</p>
+<table>
+<thead>
+<tr>
+<th>模型名称</th>
+<th>模型形式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>纯SAR模型</strong></td>
+<td><span class="arithmatex">\(Y_n = \lambda W_n Y_n + V_n\)</span></td>
+<td>仅包含空间滞后项，无外生变量</td>
+</tr>
+<tr>
+<td><strong>SAR模型</strong></td>
+<td><span class="arithmatex">\(Y_n = \lambda W_n Y_n + X_n \beta + V_n\)</span></td>
+<td>包含外生变量 <span class="arithmatex">\(X_n\)</span>，最常用</td>
+</tr>
+<tr>
+<td><strong>高阶SAR模型</strong></td>
+<td><span class="arithmatex">\(Y_n = \sum_{l=1}^p \lambda_l W_{ln} Y_n + X_n \beta + V_n\)</span></td>
+<td>使用多个空间权重矩阵</td>
+</tr>
+<tr>
+<td><strong>空间误差模型（SE）</strong></td>
+<td><span class="arithmatex">\(Y_n = X_n \beta + U_n,\quad U_n = \lambda W_n U_n + V_n\)</span></td>
+<td>误差项具有空间自相关</td>
+</tr>
+<tr>
+<td><strong>SARAR模型</strong></td>
+<td><span class="arithmatex">\(Y_n = \lambda W_n Y_n + U_n,\quad U_n = \rho M_n U_n + V_n\)</span></td>
+<td>同时包含空间滞后与空间误差</td>
+</tr>
+<tr>
+<td><strong>带Durbin项的SAR模型</strong></td>
+<td><span class="arithmatex">\(Y_n = \lambda W_n Y_n + l_n \alpha + X_n \beta_1 + W_n X_n \beta_2 + V_n\)</span></td>
+<td>引入 <span class="arithmatex">\(W_n X_n\)</span> 捕捉外生邻里效应</td>
+</tr>
+<tr>
+<td><strong>带外生邻居效应的回归模型</strong></td>
+<td><span class="arithmatex">\(Y_n = X_n \beta + W_n X_n \gamma + V_n\)</span></td>
+<td>仅通过 <span class="arithmatex">\(W_n X_n\)</span> 引入空间交互</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12">1.2 空间权重矩阵<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<p>空间权重矩阵 <span class="arithmatex">\(W_n\)</span> 是一个 <span class="arithmatex">\(n\times n\)</span> 矩阵，用于量化空间或网络中单位之间的连接强度或距离关系。其一般性质与构造方法如下：</p>
+<h4 id="121">1.2.1 基本性质<a class="headerlink" href="#121" title="Permanent link">&para;</a></h4>
+<ul>
+<li>对角线元素通常为 0：<span class="arithmatex">\(w_{ii} = 0\)</span>，表示单位对自身无空间影响。</li>
+<li>非对角线元素 <span class="arithmatex">\(w_{ij}\)</span> 表示单位 <span class="arithmatex">\(j\)</span> 对单位 <span class="arithmatex">\(i\)</span> 的影响强度。</li>
+<li>矩阵通常<strong>非负</strong>：<span class="arithmatex">\(w_{ij} \geq 0\)</span>。</li>
+</ul>
+<h4 id="122">1.2.2 常见构造方法<a class="headerlink" href="#122" title="Permanent link">&para;</a></h4>
+<h4 id="1">1. 基于距离的函数<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
+<p>设 <span class="arithmatex">\(d_{ij}\)</span> 为两单位间的距离，定义：</p>
+<div class="arithmatex">\[
+h(d_{ij}) = d_{ij}^{-\alpha} \quad \text{或} \quad h(d_{ij}) = \exp(-\alpha d_{ij}), \quad \alpha &gt; 0
+\]</div>
+<p>则权重为：</p>
+<div class="arithmatex">\[
+w_{ij} = \frac{h(d_{ij})}{\sum_{k=1}^n h(d_{ik})}
+\]</div>
+<p>此时 <span class="arithmatex">\(W\)</span> 经过行标准化（row-normalization）。</p>
+<h4 id="2-0-1">2. 邻接矩阵（0-1矩阵）<a class="headerlink" href="#2-0-1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>若 <span class="arithmatex">\(i\)</span> 与 <span class="arithmatex">\(j\)</span> 相邻（如地理接壤、网络连接），则 <span class="arithmatex">\(w_{ij} = 1\)</span>，否则为 0。</li>
+<li>可进一步行标准化：若单位 <span class="arithmatex">\(i\)</span> 有 <span class="arithmatex">\(n_i\)</span> 个邻居，则：
+$$
+w_{ij} = \frac{1}{n_i} \quad (\text{若 } j \text{ 是 } i \text{ 的邻居})
+$$</li>
+</ul>
+<h4 id="3">3. 基于群组结构<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
+<p>假设样本分为 <span class="arithmatex">\(R\)</span> 组，每组 <span class="arithmatex">\(m\)</span> 个单位，组内权重均匀分配：</p>
+<div class="arithmatex">\[
+B_m = \frac{1}{m-1}(l_m l_m' - I_m), \quad W_n = I_R \otimes B_m
+\]</div>
+<p>其中 <span class="arithmatex">\(l_m\)</span> 是全1向量，<span class="arithmatex">\(\otimes\)</span> 为Kronecker积。</p>
+<h4 id="123">1.2.3 行标准化的意义与问题<a class="headerlink" href="#123" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>意义</strong>：使得 <span class="arithmatex">\(\sum_j w_{ij} = 1\)</span>，此时 <span class="arithmatex">\(W_n Y_n\)</span> 可解释为邻居观测值的加权平均。</li>
+<li><strong>问题</strong>：若 <span class="arithmatex">\(W_n\)</span> 行标准化且 <span class="arithmatex">\(X_n\)</span> 包含截距项，则 <span class="arithmatex">\(W_n X_n\)</span> 与 <span class="arithmatex">\(X_n\)</span> 可能产生多重共线性。此时应去除 <span class="arithmatex">\(W_n X_n\)</span> 中的截距列。</li>
+</ul>
+<h4 id="124">1.2.4 注意事项<a class="headerlink" href="#124" title="Permanent link">&para;</a></h4>
+<ul>
+<li><span class="arithmatex">\(W_n\)</span> 不一定对称，尤其在行标准化后。</li>
+<li>为保证估计理论的大样本性质，常假设 <span class="arithmatex">\(\{W_n\}\)</span> 的行和与列和一致有界（即不存在"主导单位"）。</li>
+<li>若存在主导单位（如国际贸易中的大国），需采用 <a href="https://www.tandfonline.com/doi/full/10.1080/07350015.2022.2041424#abstract">Lee, Yang &amp; Yu (2022) 等：QML and Efficient GMM Estimation of Spatial Autoregressive Models with Dominant (Popular) Units</a> 扩展方法。</li>
+</ul>
+<h3 id="13">1.3 空间计量中的<a href="../LST_Chapter4_matrix/">矩阵范数</a>应用<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
+<p>在空间计量中，矩阵范数常用于分析空间权重矩阵 <span class="arithmatex">\(W_n\)</span> 的性质。一个重要结果是：</p>
+<p>当 <span class="arithmatex">\(||\lambda W_n||_\infty &lt; 1\)</span> 时（例如 <span class="arithmatex">\(||W_n||_\infty = 1\)</span> 且 <span class="arithmatex">\(|\lambda| &lt; 1\)</span>），有：
+$$
+(I_n - \lambda W_n)^{-1} = \sum_{j=0}^\infty (\lambda W_n)^j = I_n + \lambda W_n + \lambda^2 W_n^2 + \cdots
+$$</p>
+<p>这个展开在解释 SAR 模型中的溢出效应时非常重要：
+- <span class="arithmatex">\(\lambda W_n\)</span> 表示直接邻居的影响
+- <span class="arithmatex">\(\lambda^2 W_n^2\)</span> 表示二阶邻居的影响（邻居的邻居）
+- 以此类推，高阶项表示更远距离的间接影响</p>
+<p>对于 SAR 模型 <span class="arithmatex">\(Y_n = \lambda W_n Y_n + X_n \beta + V_n\)</span>，其简化形式为：
+$$
+Y_n = \sum_{j=0}^\infty \lambda^j W_n^j (X_n \beta + V_n)
+$$
+显示了外生变量 <span class="arithmatex">\(X_n\)</span> 和误差 <span class="arithmatex">\(V_n\)</span> 通过空间结构的传播机制。</p>
+<p>此外，我们有级数截断的误差界：</p>
+<div class="arithmatex">\[
+\left\|\sum_{j=m}^{\infty} \lambda^j W_n^j\right\|_{\infty} \leq \sum_{j=m}^{\infty} \|\lambda W_n^j\|_{\infty} \leq \sum_{j=m}^{\infty} \|\lambda W_n\|^j_{\infty}\leq \sum_{j=m}^{\infty} |\lambda|^j = \frac{|\lambda|^m}{1-|\lambda|}
+\]</div>
+<p>当 <span class="arithmatex">\(m\)</span> 足够大时，<span class="arithmatex">\(\frac{|\lambda|^m}{1-|\lambda|}\)</span> 很小。在实际应用中，常使用有限项近似：</p>
+<div class="arithmatex">\[
+(I_n - \lambda W_n)^{-1} \approx I_n + \lambda W_n + \lambda^2 W_n^2 + \cdots + \lambda^m W_n^m
+\]</div>
+<p>其中 <span class="arithmatex">\(m\)</span> 的选择使得 <span class="arithmatex">\(\left\|\sum_{j=m+1}^\infty \lambda^j W_n^j\right\|\)</span> 足够小。</p>
+<h4 id="131">1.3.1 空间权重矩阵的规范性条件<a class="headerlink" href="#131" title="Permanent link">&para;</a></h4>
+<p>在空间计量理论中，常假设空间权重矩阵 <span class="arithmatex">\(\{W_n\}\)</span> 和 <span class="arithmatex">\(\{S_n^{-1}\}\)</span>（其中 <span class="arithmatex">\(S_n = I_n - \lambda W_n\)</span>）在行和与列和上一致有界。等价地说，假设 <span class="arithmatex">\(\{\|W_n\|_1\}\)</span> 和 <span class="arithmatex">\(\{\|W_n\|_\infty\}\)</span> 是有界序列，同样 <span class="arithmatex">\(S_n^{-1}\)</span> 的最大行和与列和范数也有界。</p>
+<p>这一假设的一个重要性质是：如果 <span class="arithmatex">\(\{A_n\}\)</span> 和 <span class="arithmatex">\(\{B_n\}\)</span> 在行和（列和）上一致有界，那么 <span class="arithmatex">\(\{A_n B_n\}\)</span> 也在行和（列和）上一致有界。这源于矩阵范数的次可乘性，例如：当 <span class="arithmatex">\(\|A_n\|_\infty \leq c\)</span> 且 <span class="arithmatex">\(\|B_n\|_\infty \leq c\)</span> 时，</p>
+<!-- 这是数学公式 -->
+<div class="arithmatex">\[
+\|A_n B_n\|_\infty \leq \|A_n\|_\infty \|B_n\|_\infty \leq c^2.
+\]</div>
+<!-- 公式结束 -->
+
+<p><strong>经济含义</strong>：这一假设意味着不存在"主导"的空间单位，即所有空间单位的影响都是有界的。这在许多现实经济应用中是一个合理的假设，但在某些情况下（如国际贸易中美国和中国这样的大国）可能不成立。当存在主导空间单位时，需要参考 <a href="https://www.tandfonline.com/doi/full/10.1080/07350015.2022.2041424#abstract">Lee, Yang &amp; Yu (2022) 等：QML and Efficient GMM Estimation of Spatial Autoregressive Models with Dominant (Popular) Units</a> 等扩展方法。</p>
+<hr />
+<h2 id="2-sar">2. SAR 模型的估计<a class="headerlink" href="#2-sar" title="Permanent link">&para;</a></h2>
+<p>假设 SAR 模型中空间权重矩阵 <span class="arithmatex">\(W_n\)</span> 与 <span class="arithmatex">\(X_n\)</span> 是非随机的，</p>
+<div class="arithmatex">\[
+Y_n = \lambda_0 W_n Y_n + X_n \beta_0 + V_n.
+\]</div>
+<p>记 <span class="arithmatex">\(S_n(\lambda) \equiv I_n - \lambda W_n, S_n \equiv I_n - \lambda_0 W_n\)</span>。 假设 <span class="arithmatex">\(S_n(\lambda)\)</span> 对于参数空间中的所有 <span class="arithmatex">\(\lambda\)</span> 都是可逆的，则
+$$
+Y_n = (I_n - \lambda_0 W_n)^{-1} ( X_n \beta_0 + V_n) = S_n(\lambda)^{-1} ( X_n \beta_0 + V_n).
+$$
+因此，<span class="arithmatex">\(W_n Y_n = W_n S_n(\lambda)^{-1} ( X_n \beta_0 + V_n) \equiv G_n ( X_n \beta_0 + V_n)\)</span>. 从而我们有
+$$
+\mathbb{E}[(W_n Y_n)'V_n] = \mathbb{E} [( X_n \beta_0 + V_n)'G_n'V_n] = \mathbb{E} [V_n' G_n'V_n ] = \sigma^2 \operatorname{tr}(G_n).
+$$
+也就是说，<span class="arithmatex">\(W_n Y_n\)</span> 是一个内生变量 (endogenous variable)。</p>
+<p>当存在内生变量时，通常有三种方法来处理：</p>
+<ul>
+<li>工具变量/两阶段最小二乘；</li>
+<li>联立方程估计： 如果内生性可以被建模，可以同时估计方程组；</li>
+<li>控制函数 (control function)。</li>
+</ul>
+<h3 id="21-2sls">2.1 两阶段最小二乘 (2SLS)<a class="headerlink" href="#21-2sls" title="Permanent link">&para;</a></h3>
+<p>首先我们介绍 2SLS 估计。</p>
+<details class="question" open="open">
+<summary>一般地，工具变量应该满足什么条件？</summary>
+<ul>
+<li><strong>相关性</strong>：工具变量与内生变量相关；</li>
+<li><strong>外生性</strong>：工具变量与误差项不相关。</li>
+</ul>
+</details>
+<ol>
+<li>
+<p>假设 <span class="arithmatex">\(\| \lambda_0 W_n\|_\infty &lt; 1\)</span>，则 <span class="arithmatex">\(S_n^{-1} \equiv (I_n - \lambda_0 W_n)^{-1} = \sum_{l=0}^\infty \lambda_0^l W_n^l\)</span>，并且
+$$
+W_n Y_n = W_n S_n^{-1} (X_n \beta_0 + V_n) = \sum_{l=0}^\infty \lambda_0^l W_n^{l+1} (X_n \beta_0 + V_n).
+$$
+因此，<span class="arithmatex">\(W_n X_n, W_n X_n^2,\ldots\)</span> 通常与 <span class="arithmatex">\(W_n Y_n\)</span> 相关。注意，这里的相关性是从样本的角度来说的，即当 <span class="arithmatex">\(n\rightarrow \infty\)</span>时， <span class="arithmatex">\(\frac{1}{n} (W_n X_n)'(W_n Y_n)\)</span> 不会衰减。</p>
+</li>
+<li>
+<p>因为 <span class="arithmatex">\(W_n\)</span> 与 <span class="arithmatex">\(X_n\)</span> 是非随机的，<span class="arithmatex">\(\mathbb{E}(V_n)=0\)</span>，所以 <span class="arithmatex">\(W_n X_n, W_n X_n^2,\ldots\)</span> 与 <span class="arithmatex">\(V_n\)</span> 不相关，即 <span class="arithmatex">\(\mathbb{E}(X_n'V_n)=0\)</span>。</p>
+</li>
+</ol>
+<p>因此，<span class="arithmatex">\(W_nX_n,W_n^2X_n\)</span> 可以作为 IV。通常，我们使用 <span class="arithmatex">\([W_nX_n ~ ~ X_n]\)</span> 或者 <span class="arithmatex">\([W_nX_n ~ ~ W_n^2X_n  ~ ~ X_n]\)</span> 作为工具变量矩阵，记作 <span class="arithmatex">\(Q_n= (q_{1n},\ldots,q_{nn})'\)</span>。我们也可以假设 <span class="arithmatex">\(X_n\)</span> 是随机的，但需满足 <span class="arithmatex">\(\mathbb{E}(V_n|X_n) = 0\)</span>。</p>
+<h4 id="211">2.1.1 两阶段最小二乘估计量<a class="headerlink" href="#211" title="Permanent link">&para;</a></h4>
+<p>记 <span class="arithmatex">\(Z_n = (W_n Y_n, X_n)\)</span>，<span class="arithmatex">\(\theta = (\lambda, \beta')'\)</span>。SAR 模型可重写为 <span class="arithmatex">\(Y_n = Z_n \theta + V_n\)</span>。使用工具变量 <span class="arithmatex">\(Q_n\)</span> 的 2SLS 估计量为：</p>
+<div class="arithmatex">\[
+\hat{\theta}_{2sls} = [Z_n' Q_n (Q_n' Q_n)^{-1} Q_n' Z_n]^{-1} Z_n' Q_n (Q_n' Q_n)^{-1} Q_n' Y_n.
+\tag{1}
+\]</div>
+<p>记投影矩阵 <span class="arithmatex">\(P_Q = Q_n (Q_n' Q_n)^{-1} Q_n'\)</span>，则</p>
+<div class="arithmatex">\[
+\hat{\theta}_{2sls} = [Z_n' P_Q Z_n]^{-1} Z_n' P_Q Y_n.
+\]</div>
+<p><strong>注意</strong>：当 <span class="arithmatex">\(W_n\)</span> 行标准化时，<span class="arithmatex">\(W_n \iota_n = \iota_n\)</span>。因此，若 <span class="arithmatex">\(X_n\)</span> 的第一列为 <span class="arithmatex">\(\iota_n\)</span>，则应将其从 <span class="arithmatex">\(W_n X_n\)</span> 中剔除（设 <span class="arithmatex">\(X_n\)</span> 的第一列是 <span class="arithmatex">\(\iota_n\)</span>）。记 <span class="arithmatex">\(G_n \equiv W_n S_n^{-1}\)</span>。</p>
+<div class="arithmatex">\[
+\mathbb{E} Z_n' Q_n = [W_n S_n^{-1} X_n \beta_0 ~ ~ X_n]' Q \equiv [G_n X_n \beta_0 ~ ~ X_n]' Q.
+\]</div>
+<h4 id="212">2.1.2 渐近性质的假设<a class="headerlink" href="#212" title="Permanent link">&para;</a></h4>
+<p><strong>假设 1</strong>：<span class="arithmatex">\(x_{i,n}\)</span> 的元素一致有界；<span class="arithmatex">\(W_n, S_n^{-1}\)</span> 的行范数与列范数一致有界。</p>
+<p><strong>假设 2</strong>：<span class="arithmatex">\(v_i\)</span> 是 i.i.d. <span class="arithmatex">\((0, \sigma^2)\)</span>。</p>
+<p><strong>假设 3</strong>：
+(i) <span class="arithmatex">\(M_{ZQ} \equiv \lim_{n \to \infty} \frac{1}{n} (G_n X_n \beta_0, X_n)' Q_n\)</span> 存在且满秩；
+(ii) <span class="arithmatex">\(\Sigma_{QQ} \equiv \lim_{n \to \infty} \frac{1}{n} Q_n' Q_n\)</span> 存在且正定；
+(iii) <span class="arithmatex">\(\sup_n \left( \frac{1}{n} \sum_{i=1}^n \| q_{in} \|^{2+\delta} \right) &lt; \infty\)</span> 对某个 <span class="arithmatex">\(\delta &gt; 0\)</span>。</p>
+<h4 id="213-2sls">2.1.3 2SLS 的渐近正态性<a class="headerlink" href="#213-2sls" title="Permanent link">&para;</a></h4>
+<p><strong>定理 1 （2SLS 的渐近正态性）</strong>：在假设 1–3 下，</p>
+<div class="arithmatex">\[
+  \sqrt{n} (\hat{\theta}_{2sls} - \theta_0) \overset{d}{\to} N\left( 0, \sigma^2 (M_{ZQ} \Sigma_{QQ}^{-1} M_{ZQ}')^{-1} \right).
+\]</div>
+<p><em>证明</em>：由于</p>
+<div class="arithmatex">\[
+\sqrt{n} (\hat{\theta}_{2sls} - \theta_0) = \left[ \frac{1}{n} Z_n' Q_n \left( \frac{1}{n} Q_n' Q_n \right)^{-1} \frac{1}{n} Q_n' Z_n \right]^{-1} \frac{1}{n} Z_n' Q_n \left( \frac{1}{n} Q_n' Q_n \right)^{-1} \frac{1}{\sqrt{n}} Q_n' V_n,
+\]</div>
+<p>在假设 3 下，由 Lyapunov CLT 与 Cramer–Wold 方法可得</p>
+<div class="arithmatex">\[
+\frac{1}{\sqrt{n}} Q_n' V_n = \frac{1}{\sqrt{n}} \sum_{i=1}^n q_{i,n} v_{i,n} \overset{d}{\to} N(0, \sigma^2 \Sigma_{QQ}).
+\]</div>
+<p>若 <span class="arithmatex">\(\frac{1}{n} Z_n' Q_n \overset{p}{\to} M_{ZQ}\)</span>，则根据 Slutsky 引理，</p>
+<div class="arithmatex">\[
+\sqrt{n} (\hat{\theta}_{2sls} - \theta_0) \overset{d}{\to} (M_{ZQ} \Sigma_{QQ}^{-1} M_{ZQ}')^{-1} M_{ZQ} \Sigma_{QQ}^{-1} \cdot N(0, \sigma^2 \Sigma_{QQ}) = N(0, \sigma^2 (M_{ZQ} \Sigma_{QQ}^{-1} M_{ZQ}')^{-1}).
+\]</div>
+<p>因此只需证明 <span class="arithmatex">\(\frac{1}{n} Z_n' Q_n \overset{p}{\to} M_{ZQ}\)</span>。</p>
+<p><strong>方法一</strong>：
+由于 <span class="arithmatex">\(Z_n' Q_n\)</span> 的第二部分 <span class="arithmatex">\(X_n' Q\)</span> 是非随机的，故只需证明</p>
+<div class="arithmatex">\[
+\frac{1}{n} (W_n Y_n - G_n X_n \beta_0)' Q_n = \frac{1}{n} (G_n V_n)' Q_n = o_p(1).
+\]</div>
+<p>因 <span class="arithmatex">\(\mathbb{E} \frac{1}{n} (G_n V_n)' Q_n = 0\)</span>，只需证</p>
+<div class="arithmatex">\[
+\operatorname{Var} \left[ \frac{1}{n} (G_n V_n)' Q_n \right] = \frac{\sigma^2}{n^2} Q_n' G_n G_n' Q_n = o(1).
+\]</div>
+<p>由半正定矩阵 <span class="arithmatex">\(\Sigma\)</span> 的性质，其所有主子式非负，即 <span class="arithmatex">\(\Sigma_{ii} \Sigma_{jj} - \Sigma_{ij}^2 \ge 0\)</span>，故只需证 <span class="arithmatex">\(\frac{1}{n^2} Q_n' G_n G_n' Q_n\)</span> 的所有对角元为 <span class="arithmatex">\(o(1)\)</span>：</p>
+<div class="arithmatex">\[
+\frac{1}{n^2} (Q_{.i,n}' G_n G_n' Q_{.i,n}) = o(1),
+\]</div>
+<p>其中 <span class="arithmatex">\(Q_{.i,n}\)</span> 为 <span class="arithmatex">\(Q_n\)</span> 的第 <span class="arithmatex">\(i\)</span> 列。</p>
+<p>由于 <span class="arithmatex">\(\sup_n (\| G_n \|_1 + \| G_n \|_\infty) &lt; \infty\)</span>，有</p>
+<div class="arithmatex">\[
+\sup_n \max \operatorname{eig}(G_n G_n') \le \sup_n \| G_n G_n' \|_\infty \le \sup_n \| G_n \|_1 \cdot \| G_n \|_\infty &lt; \infty.
+\]</div>
+<p>又 <span class="arithmatex">\(\lim_{n \to \infty} \frac{1}{n} Q_n' Q_n\)</span> 存在，故</p>
+<div class="arithmatex">\[
+0 \le \frac{1}{n^2} (Q_{.i,n}' G_n G_n' Q_{.i,n}) \le \max \operatorname{eig}(G_n G_n') \cdot \frac{1}{n^2} (Q_{.i,n}' Q_{.i,n}) = O(1) \cdot O(n^{-1}) = O_p(n^{-1}).
+\]</div>
+<p>因此 <span class="arithmatex">\(\frac{1}{n} Z_n' Q_n \overset{p}{\to} M_{ZQ}\)</span>，定理得证。</p>
+<p><strong>方法二</strong>：
+$$
+\frac{1}{n} (W_n Y_n - G_n X_n \beta_0)' Q_n = \frac{1}{n} V_n'(S_n^{-1})' W_n' Q_n .
+$$
+因  <span class="arithmatex">\(\sup_n \| (S_n^{-1})' W_n' Q_n \|_\infty \leq \sup_n \|(S_n^{-1})' W_n'\|_\infty \|Q_n \|_\infty \leq \|(S_n^{-1})\|_1 \|W_n\|_1 \|Q_n \|_\infty \leq \infty\)</span>, 所以 <span class="arithmatex">\((S_n^{-1})' W_n' Q_n\)</span> 中的每个元素都是一致有界（且非随机的），根据弱大数定律，<span class="arithmatex">\(\frac{1}{n} V_n'(S_n^{-1})' W_n' Q_n \rightarrow_p 0\)</span>，因此定理得证。</p>
+<h3 id="22-best-iv">2.2 最优工具变量 (Best IV)<a class="headerlink" href="#22-best-iv" title="Permanent link">&para;</a></h3>
+<p><a href="https://www.tandfonline.com/doi/full/10.1081/ETC-120025891">Lee (2003): Best Spatial Two-Stage Least Squares Estimators for a Spatial Autoregressive Model with Autoregressive Disturbances.</a> 提出了 SAR 模型的最优 IV 估计。因为 <span class="arithmatex">\(\mathbb{E} W_n Y_n = W_n S_n^{-1} X_n \beta_0 = G_n X_n \beta_0\)</span>，所以 <span class="arithmatex">\(W_n Y_n\)</span> 的最优工具变量应为 <span class="arithmatex">\(G_n X_n \beta_0\)</span>。</p>
+<p>严格论证如下：回顾 <span class="arithmatex">\(\mathbb{E} Z_n' Q_n \equiv [G_n X_n \beta_0 ~ ~ X_n] Q\)</span>。由定理 1，</p>
+<div class="arithmatex">\[
+\operatorname{avar}[\sqrt{n} (\hat{\theta}_{2sls} - \theta_0)] = \sigma^2 (M_{ZQ} \Sigma_{QQ}^{-1} M_{ZQ}')^{-1} = \lim_{n \to \infty} \sigma^2 \left\{ \frac{1}{n} \mathbb{E} Z_n' Q_n \left( \frac{1}{n} Q_n' Q_n \right)^{-1} \frac{1}{n} Q_n' \mathbb{E} Z_n \right\}^{-1}.
+\]</div>
+<p>当 <span class="arithmatex">\(Q_n = \mathbb{E} Z_n\)</span> 时，</p>
+<div class="arithmatex">\[
+\operatorname{avar}[\sqrt{n} (\hat{\theta}_{2sls} - \theta_0)] = \lim_{n \to \infty} \sigma^2 \left\{ \frac{1}{n} \mathbb{E} Z_n' \mathbb{E} Z_n \right\}^{-1}.
+\]</div>
+<p>因为 <span class="arithmatex">\(P_Q \equiv Q_n (Q_n' Q_n)^{-1} Q_n'\)</span> 是投影矩阵，有</p>
+<div class="arithmatex">\[
+\mathbb{E} Z_n' Q_n (Q_n' Q_n)^{-1} Q_n' \mathbb{E} Z_n \le \mathbb{E} Z_n' \mathbb{E} Z_n,
+\]</div>
+<p>其中 <span class="arithmatex">\(A \le B\)</span> 表示 <span class="arithmatex">\(B - A\)</span> 半正定。因此，</p>
+<div class="arithmatex">\[
+\lim_{n \to \infty} n \sigma^2 \left\{ \mathbb{E} Z_n' Q_n (Q_n' Q_n)^{-1} Q_n' \mathbb{E} Z_n \right\}^{-1} \ge \lim_{n \to \infty} n \sigma^2 \left\{ \mathbb{E} Z_n' \mathbb{E} Z_n \right\}^{-1}.
+\]</div>
+<p>换言之，在 <span class="arithmatex">\(v_i\)</span> i.i.d. <span class="arithmatex">\((0, \sigma^2)\)</span> 时，<strong><span class="arithmatex">\(\mathbb{E} Z_n\)</span> 是最优工具变量</strong>，且 <strong><span class="arithmatex">\(G_n X_n \beta_0\)</span> 是 <span class="arithmatex">\(W_n Y_n\)</span> 的最优 IV</strong>。</p>
+<h4 id="221-iv">2.2.1 可行的最优 IV 估计<a class="headerlink" href="#221-iv" title="Permanent link">&para;</a></h4>
+<p>实际中 <span class="arithmatex">\(\beta_0\)</span> 未知，可行的最优 IV 估计可按以下两步进行：</p>
+<ol>
+<li>以 <span class="arithmatex">\(W_n X_n\)</span> 和 <span class="arithmatex">\(W_n^2 X_n\)</span> 作为 IV，用 (1) 得到 2SLS 估计量 <span class="arithmatex">\(\hat{\beta}_{2sls}\)</span>；</li>
+<li>以 <span class="arithmatex">\(\hat{G}_n X_n \hat{\beta}_{2sls}\)</span> 作为 <span class="arithmatex">\(W_n Y_n\)</span> 的 IV，得到可行最优 IV 估计量：</li>
+</ol>
+<div class="arithmatex">\[
+\hat{\theta}_{best} = (\hat{Z}_n' Q_n)^{-1} \hat{Z}_n' Y_n,
+\]</div>
+<p>其中 <span class="arithmatex">\(\hat{Z}_n \equiv [\hat{G}_n X_n \hat{\beta}_{2sls} ~ ~ X_n]\)</span>，<span class="arithmatex">\(\hat{G}_n = W_n (I_n - \hat{\lambda}_{2sls} W_n)^{-1}\)</span>。</p>
+<h4 id="222">2.2.2 对应代码实现<a class="headerlink" href="#222" title="Permanent link">&para;</a></h4>
+<div class="language-R highlight"><span class="filename">2SLS for SAR model</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">####################################################</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># Three main functions for SAR model 2SLS estimation</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">####################################################</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># IV: (X, WX*)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">SAR_2SLS1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">W</span><span class="p">){</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="n">X_star</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">X</span><span class="p">[,</span><span class="w"> </span><span class="m">-1</span><span class="p">,</span><span class="w"> </span><span class="n">drop</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">]</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="c1"># IV matrix</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="n">WX_star</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">W</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="n">X_star</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="n">Q</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cbind</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">WX_star</span><span class="p">)</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="c1"># endogenous variable</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="n">WY</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">W</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="n">Y</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="n">Z</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cbind</span><span class="p">(</span><span class="n">WY</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="p">)</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">  </span><span class="c1"># First stage</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">  </span><span class="n">P_Q</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Q</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="nf">solve</span><span class="p">(</span><span class="nf">t</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="n">Q</span><span class="p">)</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="nf">t</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">  </span><span class="n">Z_hat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">P_Q</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="n">Z</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">  </span><span class="c1"># Second stage</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">  </span><span class="n">theta_hat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">solve</span><span class="p">(</span><span class="nf">t</span><span class="p">(</span><span class="n">Z_hat</span><span class="p">)</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="n">Z_hat</span><span class="p">)</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="nf">t</span><span class="p">(</span><span class="n">Z_hat</span><span class="p">)</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="n">Y</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">  </span><span class="kr">return</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">    </span><span class="n">lambda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">theta_hat</span><span class="p">[</span><span class="m">1</span><span class="p">],</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">    </span><span class="n">beta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">theta_hat</span><span class="p">[</span><span class="m">-1</span><span class="p">]</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">  </span><span class="p">))</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="p">}</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="c1"># IV: (X, WX*, W^2X*)</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="n">SAR_2SLS2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">W</span><span class="p">){</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">  </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">  </span><span class="n">X_star</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">X</span><span class="p">[,</span><span class="w"> </span><span class="m">-1</span><span class="p">,</span><span class="w"> </span><span class="n">drop</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">]</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">  </span><span class="c1"># IV matrix</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">  </span><span class="n">WX_star</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">W</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="n">X_star</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">  </span><span class="n">W2X_star</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">W</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="n">WX_star</span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="w">  </span><span class="n">Q</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cbind</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">WX_star</span><span class="p">,</span><span class="w"> </span><span class="n">W2X_star</span><span class="p">)</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="w">  </span><span class="c1"># endogenous variable</span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="w">  </span><span class="n">WY</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">W</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="n">Y</span>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="w">  </span><span class="n">Z</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cbind</span><span class="p">(</span><span class="n">WY</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="p">)</span>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="w">  </span><span class="c1"># First stage</span>
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="w">  </span><span class="n">P_Q</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Q</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="nf">solve</span><span class="p">(</span><span class="nf">t</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="n">Q</span><span class="p">)</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="nf">t</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span>
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="w">  </span><span class="n">Z_hat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">P_Q</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="n">Z</span>
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>
+</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a><span class="w">  </span><span class="c1"># Second stage</span>
+</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="w">  </span><span class="n">theta_hat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">solve</span><span class="p">(</span><span class="nf">t</span><span class="p">(</span><span class="n">Z_hat</span><span class="p">)</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="n">Z_hat</span><span class="p">)</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="nf">t</span><span class="p">(</span><span class="n">Z_hat</span><span class="p">)</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="n">Y</span>
+</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>
+</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a><span class="w">  </span><span class="kr">return</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span>
+</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a><span class="w">    </span><span class="n">lambda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">theta_hat</span><span class="p">[</span><span class="m">1</span><span class="p">],</span>
+</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a><span class="w">    </span><span class="n">beta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">theta_hat</span><span class="p">[</span><span class="m">-1</span><span class="p">]</span>
+</span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a><span class="w">  </span><span class="p">))</span>
+</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a><span class="p">}</span>
+</span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>
+</span><span id="__span-0-61"><a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>
+</span><span id="__span-0-62"><a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>
+</span><span id="__span-0-63"><a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a><span class="c1"># feasible best IV</span>
+</span><span id="__span-0-64"><a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a><span class="n">SAR_BIV</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">W</span><span class="p">){</span>
+</span><span id="__span-0-65"><a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a><span class="w">  </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+</span><span id="__span-0-66"><a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a>
+</span><span id="__span-0-67"><a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a><span class="w">  </span><span class="n">X_star</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">X</span><span class="p">[,</span><span class="w"> </span><span class="m">-1</span><span class="p">,</span><span class="w"> </span><span class="n">drop</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">]</span>
+</span><span id="__span-0-68"><a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a>
+</span><span id="__span-0-69"><a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a><span class="w">  </span><span class="c1"># endogenous variable</span>
+</span><span id="__span-0-70"><a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a><span class="w">  </span><span class="n">WY</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">W</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="n">Y</span>
+</span><span id="__span-0-71"><a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a><span class="w">  </span><span class="n">Z</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cbind</span><span class="p">(</span><span class="n">WY</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="p">)</span>
+</span><span id="__span-0-72"><a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a>
+</span><span id="__span-0-73"><a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a><span class="w">  </span><span class="c1"># step 1: initial estimate via SAR_2SLS2</span>
+</span><span id="__span-0-74"><a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a><span class="w">  </span><span class="n">init_fit</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">SAR_2SLS2</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">W</span><span class="p">)</span>
+</span><span id="__span-0-75"><a id="__codelineno-0-75" name="__codelineno-0-75" href="#__codelineno-0-75"></a><span class="w">  </span><span class="n">lambda_init</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">init_fit</span><span class="o">$</span><span class="n">lambda</span>
+</span><span id="__span-0-76"><a id="__codelineno-0-76" name="__codelineno-0-76" href="#__codelineno-0-76"></a><span class="w">  </span><span class="n">beta_init</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">init_fit</span><span class="o">$</span><span class="n">beta</span>
+</span><span id="__span-0-77"><a id="__codelineno-0-77" name="__codelineno-0-77" href="#__codelineno-0-77"></a>
+</span><span id="__span-0-78"><a id="__codelineno-0-78" name="__codelineno-0-78" href="#__codelineno-0-78"></a><span class="w">  </span><span class="c1"># step 2: construct best IV</span>
+</span><span id="__span-0-79"><a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a><span class="w">  </span><span class="n">S_inv</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">solve</span><span class="p">(</span><span class="nf">diag</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">lambda_init</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">W</span><span class="p">)</span>
+</span><span id="__span-0-80"><a id="__codelineno-0-80" name="__codelineno-0-80" href="#__codelineno-0-80"></a><span class="w">  </span><span class="n">G_n</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">W</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="n">S_inv</span>
+</span><span id="__span-0-81"><a id="__codelineno-0-81" name="__codelineno-0-81" href="#__codelineno-0-81"></a><span class="w">  </span><span class="n">GX_beta</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">G_n</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="n">beta_init</span>
+</span><span id="__span-0-82"><a id="__codelineno-0-82" name="__codelineno-0-82" href="#__codelineno-0-82"></a><span class="w">  </span><span class="n">Q</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cbind</span><span class="p">(</span><span class="n">GX_beta</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="p">)</span><span class="w"> </span><span class="c1"># best IV matrix</span>
+</span><span id="__span-0-83"><a id="__codelineno-0-83" name="__codelineno-0-83" href="#__codelineno-0-83"></a>
+</span><span id="__span-0-84"><a id="__codelineno-0-84" name="__codelineno-0-84" href="#__codelineno-0-84"></a><span class="w">  </span><span class="c1"># # best IV estimation</span>
+</span><span id="__span-0-85"><a id="__codelineno-0-85" name="__codelineno-0-85" href="#__codelineno-0-85"></a><span class="w">  </span><span class="c1"># # first stage</span>
+</span><span id="__span-0-86"><a id="__codelineno-0-86" name="__codelineno-0-86" href="#__codelineno-0-86"></a><span class="w">  </span><span class="c1"># P_Q &lt;- Q %*% solve(t(Q) %*% Q) %*% t(Q)</span>
+</span><span id="__span-0-87"><a id="__codelineno-0-87" name="__codelineno-0-87" href="#__codelineno-0-87"></a><span class="w">  </span><span class="c1"># Z_hat &lt;- P_Q %*% Z</span>
+</span><span id="__span-0-88"><a id="__codelineno-0-88" name="__codelineno-0-88" href="#__codelineno-0-88"></a><span class="w">  </span><span class="c1"># # second stage</span>
+</span><span id="__span-0-89"><a id="__codelineno-0-89" name="__codelineno-0-89" href="#__codelineno-0-89"></a><span class="w">  </span><span class="c1"># theta_hat &lt;- solve(t(Z_hat) %*% Z_hat) %*% t(Z_hat) %*% Y</span>
+</span><span id="__span-0-90"><a id="__codelineno-0-90" name="__codelineno-0-90" href="#__codelineno-0-90"></a>
+</span><span id="__span-0-91"><a id="__codelineno-0-91" name="__codelineno-0-91" href="#__codelineno-0-91"></a><span class="w">  </span><span class="c1"># alternative: direct estimation</span>
+</span><span id="__span-0-92"><a id="__codelineno-0-92" name="__codelineno-0-92" href="#__codelineno-0-92"></a><span class="w">  </span><span class="n">theta_hat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">solve</span><span class="p">(</span><span class="nf">t</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="n">Z</span><span class="p">)</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="nf">t</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="n">Y</span>
+</span><span id="__span-0-93"><a id="__codelineno-0-93" name="__codelineno-0-93" href="#__codelineno-0-93"></a>
+</span><span id="__span-0-94"><a id="__codelineno-0-94" name="__codelineno-0-94" href="#__codelineno-0-94"></a><span class="w">  </span><span class="kr">return</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span>
+</span><span id="__span-0-95"><a id="__codelineno-0-95" name="__codelineno-0-95" href="#__codelineno-0-95"></a><span class="w">    </span><span class="n">lambda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">theta_hat</span><span class="p">[</span><span class="m">1</span><span class="p">],</span>
+</span><span id="__span-0-96"><a id="__codelineno-0-96" name="__codelineno-0-96" href="#__codelineno-0-96"></a><span class="w">    </span><span class="n">beta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">theta_hat</span><span class="p">[</span><span class="m">-1</span><span class="p">]</span>
+</span><span id="__span-0-97"><a id="__codelineno-0-97" name="__codelineno-0-97" href="#__codelineno-0-97"></a><span class="w">  </span><span class="p">))</span>
+</span><span id="__span-0-98"><a id="__codelineno-0-98" name="__codelineno-0-98" href="#__codelineno-0-98"></a><span class="p">}</span>
+</span><span id="__span-0-99"><a id="__codelineno-0-99" name="__codelineno-0-99" href="#__codelineno-0-99"></a>
+</span><span id="__span-0-100"><a id="__codelineno-0-100" name="__codelineno-0-100" href="#__codelineno-0-100"></a>
+</span><span id="__span-0-101"><a id="__codelineno-0-101" name="__codelineno-0-101" href="#__codelineno-0-101"></a>
+</span><span id="__span-0-102"><a id="__codelineno-0-102" name="__codelineno-0-102" href="#__codelineno-0-102"></a><span class="c1">####################################################</span>
+</span><span id="__span-0-103"><a id="__codelineno-0-103" name="__codelineno-0-103" href="#__codelineno-0-103"></a><span class="c1"># Simulation Studies</span>
+</span><span id="__span-0-104"><a id="__codelineno-0-104" name="__codelineno-0-104" href="#__codelineno-0-104"></a><span class="c1">####################################################</span>
+</span><span id="__span-0-105"><a id="__codelineno-0-105" name="__codelineno-0-105" href="#__codelineno-0-105"></a>
+</span><span id="__span-0-106"><a id="__codelineno-0-106" name="__codelineno-0-106" href="#__codelineno-0-106"></a>
+</span><span id="__span-0-107"><a id="__codelineno-0-107" name="__codelineno-0-107" href="#__codelineno-0-107"></a><span class="c1"># Simulation parameters</span>
+</span><span id="__span-0-108"><a id="__codelineno-0-108" name="__codelineno-0-108" href="#__codelineno-0-108"></a><span class="n">n0_vec</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">7</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">)</span><span class="w">  </span><span class="c1"># Different grid sizes</span>
+</span><span id="__span-0-109"><a id="__codelineno-0-109" name="__codelineno-0-109" href="#__codelineno-0-109"></a><span class="n">n_rep</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1000</span><span class="w">           </span><span class="c1"># Number of replications</span>
+</span><span id="__span-0-110"><a id="__codelineno-0-110" name="__codelineno-0-110" href="#__codelineno-0-110"></a><span class="n">lambda_true</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0.4</span>
+</span><span id="__span-0-111"><a id="__codelineno-0-111" name="__codelineno-0-111" href="#__codelineno-0-111"></a><span class="n">beta_true</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="c1"># Intercept, beta1, beta2</span>
+</span><span id="__span-0-112"><a id="__codelineno-0-112" name="__codelineno-0-112" href="#__codelineno-0-112"></a>
+</span><span id="__span-0-113"><a id="__codelineno-0-113" name="__codelineno-0-113" href="#__codelineno-0-113"></a><span class="c1"># Storage for summary results</span>
+</span><span id="__span-0-114"><a id="__codelineno-0-114" name="__codelineno-0-114" href="#__codelineno-0-114"></a><span class="n">simulation_table</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">()</span>
+</span><span id="__span-0-115"><a id="__codelineno-0-115" name="__codelineno-0-115" href="#__codelineno-0-115"></a>
+</span><span id="__span-0-116"><a id="__codelineno-0-116" name="__codelineno-0-116" href="#__codelineno-0-116"></a><span class="nf">set.seed</span><span class="p">(</span><span class="m">2025</span><span class="p">)</span><span class="w"> </span><span class="c1"># Reproducibility</span>
+</span><span id="__span-0-117"><a id="__codelineno-0-117" name="__codelineno-0-117" href="#__codelineno-0-117"></a>
+</span><span id="__span-0-118"><a id="__codelineno-0-118" name="__codelineno-0-118" href="#__codelineno-0-118"></a><span class="kr">for</span><span class="p">(</span><span class="n">n0</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="n">n0_vec</span><span class="p">){</span>
+</span><span id="__span-0-119"><a id="__codelineno-0-119" name="__codelineno-0-119" href="#__codelineno-0-119"></a><span class="w">  </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">n0</span><span class="o">^</span><span class="m">2</span>
+</span><span id="__span-0-120"><a id="__codelineno-0-120" name="__codelineno-0-120" href="#__codelineno-0-120"></a><span class="w">  </span><span class="nf">cat</span><span class="p">(</span><span class="nf">sprintf</span><span class="p">(</span><span class="s">&quot;Processing sample size: n = %d (grid %dx%d)\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">n0</span><span class="p">,</span><span class="w"> </span><span class="n">n0</span><span class="p">))</span>
+</span><span id="__span-0-121"><a id="__codelineno-0-121" name="__codelineno-0-121" href="#__codelineno-0-121"></a>
+</span><span id="__span-0-122"><a id="__codelineno-0-122" name="__codelineno-0-122" href="#__codelineno-0-122"></a><span class="w">  </span><span class="c1"># 1. Spatial Weight Matrix Construction (Rook Contiguity)</span>
+</span><span id="__span-0-123"><a id="__codelineno-0-123" name="__codelineno-0-123" href="#__codelineno-0-123"></a><span class="w">  </span><span class="c1"># -----------------------------------------------------</span>
+</span><span id="__span-0-124"><a id="__codelineno-0-124" name="__codelineno-0-124" href="#__codelineno-0-124"></a><span class="w">  </span><span class="n">coords</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">expand.grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="m">1</span><span class="o">:</span><span class="n">n0</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="o">=</span><span class="m">1</span><span class="o">:</span><span class="n">n0</span><span class="p">)</span>
+</span><span id="__span-0-125"><a id="__codelineno-0-125" name="__codelineno-0-125" href="#__codelineno-0-125"></a><span class="w">  </span><span class="n">W0</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+</span><span id="__span-0-126"><a id="__codelineno-0-126" name="__codelineno-0-126" href="#__codelineno-0-126"></a>
+</span><span id="__span-0-127"><a id="__codelineno-0-127" name="__codelineno-0-127" href="#__codelineno-0-127"></a><span class="w">  </span><span class="c1"># Efficiently build adjacency</span>
+</span><span id="__span-0-128"><a id="__codelineno-0-128" name="__codelineno-0-128" href="#__codelineno-0-128"></a><span class="w">  </span><span class="kr">for</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="n">n</span><span class="p">){</span>
+</span><span id="__span-0-129"><a id="__codelineno-0-129" name="__codelineno-0-129" href="#__codelineno-0-129"></a><span class="w">    </span><span class="kr">for</span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="n">n</span><span class="p">){</span>
+</span><span id="__span-0-130"><a id="__codelineno-0-130" name="__codelineno-0-130" href="#__codelineno-0-130"></a><span class="w">      </span><span class="kr">if</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">j</span><span class="p">){</span>
+</span><span id="__span-0-131"><a id="__codelineno-0-131" name="__codelineno-0-131" href="#__codelineno-0-131"></a><span class="w">        </span><span class="n">dist</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">abs</span><span class="p">(</span><span class="n">coords</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">coords</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="m">1</span><span class="p">])</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">abs</span><span class="p">(</span><span class="n">coords</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="m">2</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">coords</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="m">2</span><span class="p">])</span>
+</span><span id="__span-0-132"><a id="__codelineno-0-132" name="__codelineno-0-132" href="#__codelineno-0-132"></a><span class="w">        </span><span class="kr">if</span><span class="p">(</span><span class="n">dist</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="p">){</span>
+</span><span id="__span-0-133"><a id="__codelineno-0-133" name="__codelineno-0-133" href="#__codelineno-0-133"></a><span class="w">          </span><span class="n">W0</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span>
+</span><span id="__span-0-134"><a id="__codelineno-0-134" name="__codelineno-0-134" href="#__codelineno-0-134"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-135"><a id="__codelineno-0-135" name="__codelineno-0-135" href="#__codelineno-0-135"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-0-136"><a id="__codelineno-0-136" name="__codelineno-0-136" href="#__codelineno-0-136"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-137"><a id="__codelineno-0-137" name="__codelineno-0-137" href="#__codelineno-0-137"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-0-138"><a id="__codelineno-0-138" name="__codelineno-0-138" href="#__codelineno-0-138"></a>
+</span><span id="__span-0-139"><a id="__codelineno-0-139" name="__codelineno-0-139" href="#__codelineno-0-139"></a><span class="w">  </span><span class="c1"># Row normalization</span>
+</span><span id="__span-0-140"><a id="__codelineno-0-140" name="__codelineno-0-140" href="#__codelineno-0-140"></a><span class="w">  </span><span class="n">rs</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rowSums</span><span class="p">(</span><span class="n">W0</span><span class="p">)</span>
+</span><span id="__span-0-141"><a id="__codelineno-0-141" name="__codelineno-0-141" href="#__codelineno-0-141"></a><span class="w">  </span><span class="n">W</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">W0</span>
+</span><span id="__span-0-142"><a id="__codelineno-0-142" name="__codelineno-0-142" href="#__codelineno-0-142"></a><span class="w">  </span><span class="kr">if</span><span class="p">(</span><span class="nf">any</span><span class="p">(</span><span class="n">rs</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0</span><span class="p">)){</span>
+</span><span id="__span-0-143"><a id="__codelineno-0-143" name="__codelineno-0-143" href="#__codelineno-0-143"></a><span class="w">    </span><span class="n">W</span><span class="p">[</span><span class="n">rs</span><span class="o">&gt;</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">W0</span><span class="p">[</span><span class="n">rs</span><span class="o">&gt;</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">rs</span><span class="p">[</span><span class="n">rs</span><span class="o">&gt;</span><span class="m">0</span><span class="p">]</span>
+</span><span id="__span-0-144"><a id="__codelineno-0-144" name="__codelineno-0-144" href="#__codelineno-0-144"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-0-145"><a id="__codelineno-0-145" name="__codelineno-0-145" href="#__codelineno-0-145"></a>
+</span><span id="__span-0-146"><a id="__codelineno-0-146" name="__codelineno-0-146" href="#__codelineno-0-146"></a><span class="w">  </span><span class="c1"># Pre-calculate (I - lambda*W)^-1 for DGP</span>
+</span><span id="__span-0-147"><a id="__codelineno-0-147" name="__codelineno-0-147" href="#__codelineno-0-147"></a><span class="w">  </span><span class="n">S_inv_true</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">solve</span><span class="p">(</span><span class="nf">diag</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">lambda_true</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">W</span><span class="p">)</span>
+</span><span id="__span-0-148"><a id="__codelineno-0-148" name="__codelineno-0-148" href="#__codelineno-0-148"></a>
+</span><span id="__span-0-149"><a id="__codelineno-0-149" name="__codelineno-0-149" href="#__codelineno-0-149"></a><span class="w">  </span><span class="c1"># 2. Monte Carlo Loop</span>
+</span><span id="__span-0-150"><a id="__codelineno-0-150" name="__codelineno-0-150" href="#__codelineno-0-150"></a><span class="w">  </span><span class="c1"># -------------------</span>
+</span><span id="__span-0-151"><a id="__codelineno-0-151" name="__codelineno-0-151" href="#__codelineno-0-151"></a><span class="w">  </span><span class="c1"># Store estimates: Columns = [lambda, beta0, beta1, beta2]</span>
+</span><span id="__span-0-152"><a id="__codelineno-0-152" name="__codelineno-0-152" href="#__codelineno-0-152"></a><span class="w">  </span><span class="n">res_2sls1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="n">n_rep</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">)</span>
+</span><span id="__span-0-153"><a id="__codelineno-0-153" name="__codelineno-0-153" href="#__codelineno-0-153"></a><span class="w">  </span><span class="n">res_2sls2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="n">n_rep</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">)</span>
+</span><span id="__span-0-154"><a id="__codelineno-0-154" name="__codelineno-0-154" href="#__codelineno-0-154"></a><span class="w">  </span><span class="n">res_biv</span><span class="w">   </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="n">n_rep</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">)</span>
+</span><span id="__span-0-155"><a id="__codelineno-0-155" name="__codelineno-0-155" href="#__codelineno-0-155"></a>
+</span><span id="__span-0-156"><a id="__codelineno-0-156" name="__codelineno-0-156" href="#__codelineno-0-156"></a><span class="w">  </span><span class="kr">for</span><span class="p">(</span><span class="n">r</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="n">n_rep</span><span class="p">){</span>
+</span><span id="__span-0-157"><a id="__codelineno-0-157" name="__codelineno-0-157" href="#__codelineno-0-157"></a><span class="w">    </span><span class="c1"># Generate X: 1st col is 1, rest are N(0,1)</span>
+</span><span id="__span-0-158"><a id="__codelineno-0-158" name="__codelineno-0-158" href="#__codelineno-0-158"></a><span class="w">    </span><span class="n">X</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cbind</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</span><span id="__span-0-159"><a id="__codelineno-0-159" name="__codelineno-0-159" href="#__codelineno-0-159"></a>
+</span><span id="__span-0-160"><a id="__codelineno-0-160" name="__codelineno-0-160" href="#__codelineno-0-160"></a><span class="w">    </span><span class="c1"># Generate error term V: t-distribution with df=5</span>
+</span><span id="__span-0-161"><a id="__codelineno-0-161" name="__codelineno-0-161" href="#__codelineno-0-161"></a><span class="w">    </span><span class="n">V</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rt</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="p">)</span>
+</span><span id="__span-0-162"><a id="__codelineno-0-162" name="__codelineno-0-162" href="#__codelineno-0-162"></a>
+</span><span id="__span-0-163"><a id="__codelineno-0-163" name="__codelineno-0-163" href="#__codelineno-0-163"></a><span class="w">    </span><span class="c1"># Generate dependent variable Y</span>
+</span><span id="__span-0-164"><a id="__codelineno-0-164" name="__codelineno-0-164" href="#__codelineno-0-164"></a><span class="w">    </span><span class="c1"># Y = (I - lambda W)^-1 (X beta + V)</span>
+</span><span id="__span-0-165"><a id="__codelineno-0-165" name="__codelineno-0-165" href="#__codelineno-0-165"></a><span class="w">    </span><span class="n">Y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">S_inv_true</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="p">(</span><span class="n">X</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="n">beta_true</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">V</span><span class="p">)</span>
+</span><span id="__span-0-166"><a id="__codelineno-0-166" name="__codelineno-0-166" href="#__codelineno-0-166"></a>
+</span><span id="__span-0-167"><a id="__codelineno-0-167" name="__codelineno-0-167" href="#__codelineno-0-167"></a><span class="w">    </span><span class="c1"># Method 1: 2SLS (X, WX*)</span>
+</span><span id="__span-0-168"><a id="__codelineno-0-168" name="__codelineno-0-168" href="#__codelineno-0-168"></a><span class="w">    </span><span class="n">est1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">SAR_2SLS1</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">W</span><span class="p">)</span>
+</span><span id="__span-0-169"><a id="__codelineno-0-169" name="__codelineno-0-169" href="#__codelineno-0-169"></a><span class="w">    </span><span class="n">res_2sls1</span><span class="p">[</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">est1</span><span class="o">$</span><span class="n">lambda</span><span class="p">,</span><span class="w"> </span><span class="n">est1</span><span class="o">$</span><span class="n">beta</span><span class="p">)</span>
+</span><span id="__span-0-170"><a id="__codelineno-0-170" name="__codelineno-0-170" href="#__codelineno-0-170"></a>
+</span><span id="__span-0-171"><a id="__codelineno-0-171" name="__codelineno-0-171" href="#__codelineno-0-171"></a><span class="w">    </span><span class="c1"># Method 2: 2SLS (X, WX*, W^2X*)</span>
+</span><span id="__span-0-172"><a id="__codelineno-0-172" name="__codelineno-0-172" href="#__codelineno-0-172"></a><span class="w">    </span><span class="n">est2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">SAR_2SLS2</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">W</span><span class="p">)</span>
+</span><span id="__span-0-173"><a id="__codelineno-0-173" name="__codelineno-0-173" href="#__codelineno-0-173"></a><span class="w">    </span><span class="n">res_2sls2</span><span class="p">[</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">est2</span><span class="o">$</span><span class="n">lambda</span><span class="p">,</span><span class="w"> </span><span class="n">est2</span><span class="o">$</span><span class="n">beta</span><span class="p">)</span>
+</span><span id="__span-0-174"><a id="__codelineno-0-174" name="__codelineno-0-174" href="#__codelineno-0-174"></a>
+</span><span id="__span-0-175"><a id="__codelineno-0-175" name="__codelineno-0-175" href="#__codelineno-0-175"></a><span class="w">    </span><span class="c1"># Method 3: Best IV</span>
+</span><span id="__span-0-176"><a id="__codelineno-0-176" name="__codelineno-0-176" href="#__codelineno-0-176"></a><span class="w">    </span><span class="n">est3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">SAR_BIV</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">W</span><span class="p">)</span>
+</span><span id="__span-0-177"><a id="__codelineno-0-177" name="__codelineno-0-177" href="#__codelineno-0-177"></a><span class="w">    </span><span class="n">res_biv</span><span class="p">[</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">est3</span><span class="o">$</span><span class="n">lambda</span><span class="p">,</span><span class="w"> </span><span class="n">est3</span><span class="o">$</span><span class="n">beta</span><span class="p">)</span>
+</span><span id="__span-0-178"><a id="__codelineno-0-178" name="__codelineno-0-178" href="#__codelineno-0-178"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-0-179"><a id="__codelineno-0-179" name="__codelineno-0-179" href="#__codelineno-0-179"></a>
+</span><span id="__span-0-180"><a id="__codelineno-0-180" name="__codelineno-0-180" href="#__codelineno-0-180"></a><span class="w">  </span><span class="c1"># 3. Calculate Bias and RMSE</span>
+</span><span id="__span-0-181"><a id="__codelineno-0-181" name="__codelineno-0-181" href="#__codelineno-0-181"></a><span class="w">  </span><span class="c1"># --------------------------</span>
+</span><span id="__span-0-182"><a id="__codelineno-0-182" name="__codelineno-0-182" href="#__codelineno-0-182"></a><span class="w">  </span><span class="c1"># True parameter vector</span>
+</span><span id="__span-0-183"><a id="__codelineno-0-183" name="__codelineno-0-183" href="#__codelineno-0-183"></a><span class="w">  </span><span class="n">theta_true</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">lambda_true</span><span class="p">,</span><span class="w"> </span><span class="n">beta_true</span><span class="p">)</span>
+</span><span id="__span-0-184"><a id="__codelineno-0-184" name="__codelineno-0-184" href="#__codelineno-0-184"></a>
+</span><span id="__span-0-185"><a id="__codelineno-0-185" name="__codelineno-0-185" href="#__codelineno-0-185"></a><span class="w">  </span><span class="n">calc_metrics</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">est_matrix</span><span class="p">,</span><span class="w"> </span><span class="n">true_vec</span><span class="p">){</span>
+</span><span id="__span-0-186"><a id="__codelineno-0-186" name="__codelineno-0-186" href="#__codelineno-0-186"></a><span class="w">    </span><span class="n">bias</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">colMeans</span><span class="p">(</span><span class="n">est_matrix</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">true_vec</span>
+</span><span id="__span-0-187"><a id="__codelineno-0-187" name="__codelineno-0-187" href="#__codelineno-0-187"></a><span class="w">    </span><span class="n">rmse</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sqrt</span><span class="p">(</span><span class="nf">colMeans</span><span class="p">((</span><span class="n">est_matrix</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="n">true_vec</span><span class="p">,</span><span class="w"> </span><span class="n">nrow</span><span class="o">=</span><span class="nf">nrow</span><span class="p">(</span><span class="n">est_matrix</span><span class="p">),</span><span class="w"> </span><span class="n">ncol</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">true_vec</span><span class="p">),</span><span class="w"> </span><span class="n">byrow</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">))</span><span class="o">^</span><span class="m">2</span><span class="p">))</span>
+</span><span id="__span-0-188"><a id="__codelineno-0-188" name="__codelineno-0-188" href="#__codelineno-0-188"></a><span class="w">    </span><span class="kr">return</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="n">bias</span><span class="p">,</span><span class="w"> </span><span class="n">rmse</span><span class="p">))</span>
+</span><span id="__span-0-189"><a id="__codelineno-0-189" name="__codelineno-0-189" href="#__codelineno-0-189"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-0-190"><a id="__codelineno-0-190" name="__codelineno-0-190" href="#__codelineno-0-190"></a>
+</span><span id="__span-0-191"><a id="__codelineno-0-191" name="__codelineno-0-191" href="#__codelineno-0-191"></a><span class="w">  </span><span class="n">m1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">calc_metrics</span><span class="p">(</span><span class="n">res_2sls1</span><span class="p">,</span><span class="w"> </span><span class="n">theta_true</span><span class="p">)</span>
+</span><span id="__span-0-192"><a id="__codelineno-0-192" name="__codelineno-0-192" href="#__codelineno-0-192"></a><span class="w">  </span><span class="n">m2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">calc_metrics</span><span class="p">(</span><span class="n">res_2sls2</span><span class="p">,</span><span class="w"> </span><span class="n">theta_true</span><span class="p">)</span>
+</span><span id="__span-0-193"><a id="__codelineno-0-193" name="__codelineno-0-193" href="#__codelineno-0-193"></a><span class="w">  </span><span class="n">m3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">calc_metrics</span><span class="p">(</span><span class="n">res_biv</span><span class="p">,</span><span class="w"> </span><span class="n">theta_true</span><span class="p">)</span>
+</span><span id="__span-0-194"><a id="__codelineno-0-194" name="__codelineno-0-194" href="#__codelineno-0-194"></a>
+</span><span id="__span-0-195"><a id="__codelineno-0-195" name="__codelineno-0-195" href="#__codelineno-0-195"></a><span class="w">  </span><span class="c1"># Organize into rows for the table</span>
+</span><span id="__span-0-196"><a id="__codelineno-0-196" name="__codelineno-0-196" href="#__codelineno-0-196"></a><span class="w">  </span><span class="c1"># Structure: Method, n, Bias_lambda, RMSE_lambda, Bias_beta1, RMSE_beta1 (showing selected params)</span>
+</span><span id="__span-0-197"><a id="__codelineno-0-197" name="__codelineno-0-197" href="#__codelineno-0-197"></a>
+</span><span id="__span-0-198"><a id="__codelineno-0-198" name="__codelineno-0-198" href="#__codelineno-0-198"></a><span class="w">  </span><span class="c1"># For brevity in the table, let&#39;s show stats for lambda and the first slope coefficient (beta_1)</span>
+</span><span id="__span-0-199"><a id="__codelineno-0-199" name="__codelineno-0-199" href="#__codelineno-0-199"></a><span class="w">  </span><span class="c1"># Indices in vectors: </span>
+</span><span id="__span-0-200"><a id="__codelineno-0-200" name="__codelineno-0-200" href="#__codelineno-0-200"></a><span class="w">  </span><span class="c1"># Est columns: 1(lambda), 2(beta0), 3(beta1), 4(beta2)</span>
+</span><span id="__span-0-201"><a id="__codelineno-0-201" name="__codelineno-0-201" href="#__codelineno-0-201"></a><span class="w">  </span><span class="c1"># Metric vector: 1-4 (Bias), 5-8 (RMSE)</span>
+</span><span id="__span-0-202"><a id="__codelineno-0-202" name="__codelineno-0-202" href="#__codelineno-0-202"></a>
+</span><span id="__span-0-203"><a id="__codelineno-0-203" name="__codelineno-0-203" href="#__codelineno-0-203"></a><span class="w">  </span><span class="n">row1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">Method</span><span class="o">=</span><span class="s">&quot;2SLS1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-0-204"><a id="__codelineno-0-204" name="__codelineno-0-204" href="#__codelineno-0-204"></a><span class="w">                     </span><span class="n">Bias_Lam</span><span class="o">=</span><span class="n">m1</span><span class="p">[</span><span class="m">1</span><span class="p">],</span><span class="w"> </span><span class="n">RMSE_Lam</span><span class="o">=</span><span class="n">m1</span><span class="p">[</span><span class="m">5</span><span class="p">],</span><span class="w"> </span>
+</span><span id="__span-0-205"><a id="__codelineno-0-205" name="__codelineno-0-205" href="#__codelineno-0-205"></a><span class="w">                     </span><span class="n">Bias_B1</span><span class="o">=</span><span class="n">m1</span><span class="p">[</span><span class="m">2</span><span class="p">],</span><span class="w"> </span><span class="n">RMSE_B1</span><span class="o">=</span><span class="n">m1</span><span class="p">[</span><span class="m">6</span><span class="p">],</span>
+</span><span id="__span-0-206"><a id="__codelineno-0-206" name="__codelineno-0-206" href="#__codelineno-0-206"></a><span class="w">                     </span><span class="n">Bias_B2</span><span class="o">=</span><span class="n">m1</span><span class="p">[</span><span class="m">3</span><span class="p">],</span><span class="w"> </span><span class="n">RMSE_B2</span><span class="o">=</span><span class="n">m1</span><span class="p">[</span><span class="m">7</span><span class="p">],</span><span class="w"> </span>
+</span><span id="__span-0-207"><a id="__codelineno-0-207" name="__codelineno-0-207" href="#__codelineno-0-207"></a><span class="w">                     </span><span class="n">Bias_B3</span><span class="o">=</span><span class="n">m1</span><span class="p">[</span><span class="m">4</span><span class="p">],</span><span class="w"> </span><span class="n">RMSE_B3</span><span class="o">=</span><span class="n">m1</span><span class="p">[</span><span class="m">8</span><span class="p">])</span>
+</span><span id="__span-0-208"><a id="__codelineno-0-208" name="__codelineno-0-208" href="#__codelineno-0-208"></a><span class="w">  </span><span class="n">row2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">Method</span><span class="o">=</span><span class="s">&quot;2SLS2&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-0-209"><a id="__codelineno-0-209" name="__codelineno-0-209" href="#__codelineno-0-209"></a><span class="w">                     </span><span class="n">Bias_Lam</span><span class="o">=</span><span class="n">m2</span><span class="p">[</span><span class="m">1</span><span class="p">],</span><span class="w"> </span><span class="n">RMSE_Lam</span><span class="o">=</span><span class="n">m2</span><span class="p">[</span><span class="m">5</span><span class="p">],</span><span class="w"> </span>
+</span><span id="__span-0-210"><a id="__codelineno-0-210" name="__codelineno-0-210" href="#__codelineno-0-210"></a><span class="w">                     </span><span class="n">Bias_B1</span><span class="o">=</span><span class="n">m2</span><span class="p">[</span><span class="m">2</span><span class="p">],</span><span class="w"> </span><span class="n">RMSE_B1</span><span class="o">=</span><span class="n">m2</span><span class="p">[</span><span class="m">6</span><span class="p">],</span>
+</span><span id="__span-0-211"><a id="__codelineno-0-211" name="__codelineno-0-211" href="#__codelineno-0-211"></a><span class="w">                     </span><span class="n">Bias_B2</span><span class="o">=</span><span class="n">m2</span><span class="p">[</span><span class="m">3</span><span class="p">],</span><span class="w"> </span><span class="n">RMSE_B2</span><span class="o">=</span><span class="n">m2</span><span class="p">[</span><span class="m">7</span><span class="p">],</span><span class="w"> </span>
+</span><span id="__span-0-212"><a id="__codelineno-0-212" name="__codelineno-0-212" href="#__codelineno-0-212"></a><span class="w">                     </span><span class="n">Bias_B3</span><span class="o">=</span><span class="n">m2</span><span class="p">[</span><span class="m">4</span><span class="p">],</span><span class="w"> </span><span class="n">RMSE_B3</span><span class="o">=</span><span class="n">m2</span><span class="p">[</span><span class="m">8</span><span class="p">])</span>
+</span><span id="__span-0-213"><a id="__codelineno-0-213" name="__codelineno-0-213" href="#__codelineno-0-213"></a><span class="w">  </span><span class="n">row3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">Method</span><span class="o">=</span><span class="s">&quot;BestIV&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-0-214"><a id="__codelineno-0-214" name="__codelineno-0-214" href="#__codelineno-0-214"></a><span class="w">                     </span><span class="n">Bias_Lam</span><span class="o">=</span><span class="n">m3</span><span class="p">[</span><span class="m">1</span><span class="p">],</span><span class="w"> </span><span class="n">RMSE_Lam</span><span class="o">=</span><span class="n">m3</span><span class="p">[</span><span class="m">5</span><span class="p">],</span><span class="w"> </span>
+</span><span id="__span-0-215"><a id="__codelineno-0-215" name="__codelineno-0-215" href="#__codelineno-0-215"></a><span class="w">                     </span><span class="n">Bias_B1</span><span class="o">=</span><span class="n">m3</span><span class="p">[</span><span class="m">2</span><span class="p">],</span><span class="w"> </span><span class="n">RMSE_B1</span><span class="o">=</span><span class="n">m3</span><span class="p">[</span><span class="m">6</span><span class="p">],</span>
+</span><span id="__span-0-216"><a id="__codelineno-0-216" name="__codelineno-0-216" href="#__codelineno-0-216"></a><span class="w">                     </span><span class="n">Bias_B2</span><span class="o">=</span><span class="n">m3</span><span class="p">[</span><span class="m">3</span><span class="p">],</span><span class="w"> </span><span class="n">RMSE_B2</span><span class="o">=</span><span class="n">m3</span><span class="p">[</span><span class="m">7</span><span class="p">],</span><span class="w"> </span>
+</span><span id="__span-0-217"><a id="__codelineno-0-217" name="__codelineno-0-217" href="#__codelineno-0-217"></a><span class="w">                     </span><span class="n">Bias_B3</span><span class="o">=</span><span class="n">m3</span><span class="p">[</span><span class="m">4</span><span class="p">],</span><span class="w"> </span><span class="n">RMSE_B3</span><span class="o">=</span><span class="n">m3</span><span class="p">[</span><span class="m">8</span><span class="p">])</span>
+</span><span id="__span-0-218"><a id="__codelineno-0-218" name="__codelineno-0-218" href="#__codelineno-0-218"></a>
+</span><span id="__span-0-219"><a id="__codelineno-0-219" name="__codelineno-0-219" href="#__codelineno-0-219"></a><span class="w">  </span><span class="n">simulation_table</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rbind</span><span class="p">(</span><span class="n">simulation_table</span><span class="p">,</span><span class="w"> </span><span class="n">row1</span><span class="p">,</span><span class="w"> </span><span class="n">row2</span><span class="p">,</span><span class="w"> </span><span class="n">row3</span><span class="p">)</span>
+</span><span id="__span-0-220"><a id="__codelineno-0-220" name="__codelineno-0-220" href="#__codelineno-0-220"></a><span class="p">}</span>
+</span><span id="__span-0-221"><a id="__codelineno-0-221" name="__codelineno-0-221" href="#__codelineno-0-221"></a>
+</span><span id="__span-0-222"><a id="__codelineno-0-222" name="__codelineno-0-222" href="#__codelineno-0-222"></a><span class="c1"># Print the Final Summary Table</span>
+</span><span id="__span-0-223"><a id="__codelineno-0-223" name="__codelineno-0-223" href="#__codelineno-0-223"></a><span class="nf">print</span><span class="p">(</span><span class="n">simulation_table</span><span class="p">,</span><span class="w"> </span><span class="n">digits</span><span class="o">=</span><span class="m">4</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="23-qmle">2.3 QMLE<a class="headerlink" href="#23-qmle" title="Permanent link">&para;</a></h3>
+<p>参考文献：<a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1468-0262.2004.00558.x">Lee, L., 2004. Asymptotic distributions of quasi-maximum likelihood estimators
+for spatial autoregressive models. Econometrica 72, 1899–1925.</a></p>
+<h4 id="231">2.3.1 似然函数与估计量<a class="headerlink" href="#231" title="Permanent link">&para;</a></h4>
+<h4 id="232">2.3.2 一致性<a class="headerlink" href="#232" title="Permanent link">&para;</a></h4>
+<h4 id="233">2.3.3 渐近正态性<a class="headerlink" href="#233" title="Permanent link">&para;</a></h4>
+<h3 id="24-gmm">2.4 GMM<a class="headerlink" href="#24-gmm" title="Permanent link">&para;</a></h3>
+<p>参考文献：<a href="https://www.sciencedirect.com/science/article/abs/pii/S0304407606000662">Lee, L., 2007. GMM and 2SLS estimation of mixed regressive, spatial
+autoregressive models. J. Econometrics 137, 489–514.</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigatio#n.tabs", "navigation.top", "navigation.sections", "search.highlight", "content.code.annotate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

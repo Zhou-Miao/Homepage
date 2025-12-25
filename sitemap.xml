@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://mydomain.org/mysite/</loc>
+         <lastmod>2025-12-25</lastmod>
+    </url>
+    <url>
+         <loc>https://mydomain.org/mysite/home/LST2025/LST_Chapter4_LQF/</loc>
+         <lastmod>2025-12-25</lastmod>
+    </url>
+    <url>
+         <loc>https://mydomain.org/mysite/home/LST2025/LST_Chapter4_SAR/</loc>
+         <lastmod>2025-12-25</lastmod>
+    </url>
+    <url>
+         <loc>https://mydomain.org/mysite/home/LST2025/LST_Chapter4_matrix/</loc>
+         <lastmod>2025-12-25</lastmod>
+    </url>
+</urlset>
